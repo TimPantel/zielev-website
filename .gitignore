@@ -6,9 +6,11 @@ PROJEKT_HANDBUCH.md
 ROADMAP.md
 VOLLSTAENDIGE_ANLEITUNG.md
 INTERNER_DEVELOPER_GUIDE.md
+Ionos.txt
 
 # --- Dokumentation & Anleitungen ---
 docs/
+!docs/DOMAIN_SETUP_IONOS.md
 widgets/
 
 # --- Backend Scripte (werden manuell in Google Apps Script kopiert) ---

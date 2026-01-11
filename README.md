@@ -17,5 +17,8 @@ Unsere Webseite ist erreichbar unter: [www.zielev.de](https://www.zielev.de) (bz
 - **Frontend:** HTML5, Vanilla CSS3, JavaScript (ES6)
 - **Anbindung:** Sichere Datenübermittlung an Google Sheets über eine eigene Apps Script API.
 
+## 📄 Dokumentation
+- [Domain-Setup (IONOS & GitHub Pages)](./docs/DOMAIN_SETUP_IONOS.md)
+
 ---
 © 2025 Ziel e.V. – Gemeinsam für den Erfolg unserer Kinder.

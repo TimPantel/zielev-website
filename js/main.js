@@ -9,42 +9,42 @@ function toggleMenu() {
 }
 
 // Close menu when clicking outside
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     const menu = document.getElementById('nav-menu');
     const toggle = document.querySelector('.nav__toggle');
-    
+
     if (menu && toggle && !menu.contains(event.target) && !toggle.contains(event.target)) {
         menu.classList.remove('active');
     }
 });
 
 // Newsletter Form Handler
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('newsletter-form');
     const message = document.getElementById('newsletter-message');
     const submitBtn = document.getElementById('newsletter-submit');
-    
+
     // ⚠️ WICHTIG: Diese URL nach der Web-App-Bereitstellung ersetzen!
     const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyOmgIB_wwWYcPVCxciYeC5f6BmpXoTAXINAofw7p4Gdi3oGmNjkutCRGEGnuNgTJuv/exec';
-    
+
     if (form) {
-        form.addEventListener('submit', async function(e) {
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
-            
+
             // Button deaktivieren
             submitBtn.disabled = true;
             submitBtn.textContent = '⏳ Wird gesendet...';
-            
+
             const vorname = document.getElementById('newsletter-vorname').value;
             const email = document.getElementById('newsletter-email').value;
-            
+
             try {
                 // URL prüfen
                 if (WEBAPP_URL === 'IHRE_WEBAPP_URL_HIER_EINFUEGEN') {
                     showMessage('error', '⚠️ Das System wird gerade eingerichtet. Bitte versuchen Sie es später erneut.');
                     return;
                 }
-                
+
                 // Daten senden
                 await fetch(WEBAPP_URL, {
                     method: 'POST',
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     body: `vorname=${encodeURIComponent(vorname)}&email=${encodeURIComponent(email)}`
                 });
-                
+
                 // Bei no-cors können wir die Antwort nicht lesen, also zeigen wir Erfolg an
                 showMessage('success', '✅ Vielen Dank! Sie wurden erfolgreich in unsere Interessentenliste eingetragen. Wir melden uns, sobald das Online-Anmeldeformular verfügbar ist!');
                 form.reset();
-                
+
             } catch (error) {
                 console.error('Newsletter-Fehler:', error);
                 showMessage('error', '❌ Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
@@ -68,13 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     function showMessage(type, text) {
         if (!message) return;
-        
+
         message.style.display = 'block';
         message.textContent = text;
-        
+
         if (type === 'success') {
             message.style.background = 'rgba(76, 175, 80, 0.3)';
             message.style.border = '1px solid rgba(76, 175, 80, 0.5)';
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             message.style.background = 'rgba(244, 67, 54, 0.3)';
             message.style.border = '1px solid rgba(244, 67, 54, 0.5)';
         }
-        
+
         // Nach 10 Sekunden ausblenden
         setTimeout(() => {
             message.style.display = 'none';
@@ -108,10 +108,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Add active class to current page in navigation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav__link');
-    
+
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
         if (linkPage === currentPage) {
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================================
 // Multi-Step Enrollment Form Logic
 // ============================================================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('ogs-enrollment-form');
     if (!form) return;
 
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
         progressSteps.forEach(pStep => {
             const stepNum = parseInt(pStep.dataset.step);
             pStep.classList.remove('progress-step--active', 'progress-step--completed');
-            
+
             if (stepNum === currentStep) {
                 pStep.classList.add('progress-step--active');
             } else if (stepNum < currentStep) {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update Buttons
         btnPrev.style.visibility = currentStep === 1 ? 'hidden' : 'visible';
-        
+
         if (currentStep === steps.length) {
             btnNext.style.display = 'none';
             btnSubmit.style.display = 'block';
@@ -183,11 +183,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validateStep(stepNum) {
         const currentStepEl = document.getElementById(`step-${stepNum}`);
-        const inputs = currentStepEl.querySelectorAll('input[required], select[required]');
+        if (!currentStepEl) return true;
+
+        const inputs = currentStepEl.querySelectorAll('input[required], select[required], textarea[required]');
         let isValid = true;
 
         inputs.forEach(input => {
-            if (!input.value.trim()) {
+            if (!input.value.trim() || (input.type === 'checkbox' && !input.checked)) {
                 input.style.borderColor = 'var(--color-error)';
                 isValid = false;
             } else {
@@ -201,8 +203,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // IBAN Validation on Step 4
-        if (stepNum === 4) {
+        // IBAN Validation on Step 5
+        if (stepNum === 5) {
             if (!validateIBAN(ibanInput.value)) {
                 ibanInput.style.borderColor = 'var(--color-error)';
                 isValid = false;
@@ -211,6 +213,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return isValid;
     }
+
+    // --- Module Detail Toggles ---
+    const setupToggle = (checkId, detailId) => {
+        const check = document.getElementById(checkId);
+        const detail = document.getElementById(detailId);
+        if (check && detail) {
+            // Initial state
+            detail.style.display = check.checked ? 'block' : 'none';
+            check.addEventListener('change', () => {
+                detail.style.display = check.checked ? 'block' : 'none';
+                if (check.checked) {
+                    detail.style.animation = 'fadeIn 0.3s ease';
+                }
+            });
+        }
+    };
+
+    setupToggle('check-homework', 'details-homework');
+    setupToggle('check-lunch', 'details-lunch');
+    setupToggle('check-afternoon', 'details-afternoon');
 
     // --- Event Listeners ---
 
@@ -241,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form Submission
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         // Final UI feedback
