@@ -75,20 +75,26 @@
                 </div>
 
                 <!-- Progress Bar -->
-                <div class="progress-container">
-                    <div class="progress-step progress-step--active" data-step="1">1</div>
-                    <div class="progress-step" data-step="2">2</div>
-                    <div class="progress-step" data-step="3">3</div>
-                    <div class="progress-step" data-step="4">4</div>
-                    <div class="progress-step" data-step="5">5</div>
+                <div class="progress-bar-container" style="padding: var(--spacing-lg) var(--spacing-xl) 0;">
+                    <div class="progress-bar" id="progress-bar">
+                        <div class="progress-step progress-step--active" data-step="1">1</div>
+                        <div class="progress-step" data-step="2">2</div>
+                        <div class="progress-step" data-step="3">3</div>
+                        <div class="progress-step" data-step="4">4</div>
+                        <div class="progress-step" data-step="5">5</div>
+                        <div class="progress-step" data-step="6">6</div>
+                    </div>
                 </div>
 
                 <!-- Form Content -->
                 <form id="ogs-enrollment-form">
-                    <!-- Step 1: Kind Daten -->
+                    <!-- Step 1: Stammdaten Kind & Eltern -->
                     <div class="form-step form-step--active" id="step-1">
-                        <h3 class="form-step-title">👤 Angaben zum Kind</h3>
-                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                        <h3 class="form-step-title">👤 Kind & Erziehungsberechtigte</h3>
+                        <p class="mb-3 text-muted">Zunächst benötigen wir die Basisdaten Ihres Kindes und des
+                            Hauptansprechpartners.</p>
+
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                             <div class="form-group">
                                 <label class="form-label">Vorname des Kindes *</label>
                                 <input type="text" name="child_firstname" class="form-input" required>
@@ -98,7 +104,8 @@
                                 <input type="text" name="child_lastname" class="form-input" required>
                             </div>
                         </div>
-                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                             <div class="form-group">
                                 <label class="form-label">Geburtsdatum *</label>
                                 <input type="date" name="child_birthday" class="form-input" required>
@@ -108,74 +115,61 @@
                                 <input type="text" name="child_nationality" class="form-input" required>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Step 2: Anschrift -->
-                    <div class="form-step" id="step-2">
-                        <h3 class="form-step-title">🏠 Anschrift & Schule</h3>
-                        <div class="form-group">
-                            <label class="form-label">Straße und Hausnummer *</label>
-                            <input type="text" name="address" class="form-input" required>
-                        </div>
-                        <div class="card-grid" style="grid-template-columns: 1fr 2fr;">
+                        <div class="card-grid" style="grid-template-columns: 2fr 1fr; gap: var(--spacing-md);">
+                            <div class="form-group">
+                                <label class="form-label">Straße und Hausnummer *</label>
+                                <input type="text" name="address" class="form-input" required>
+                            </div>
                             <div class="form-group">
                                 <label class="form-label">PLZ *</label>
                                 <input type="text" name="zip" class="form-input" pattern="[0-9]{5}" required>
                             </div>
+                        </div>
+
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                             <div class="form-group">
                                 <label class="form-label">Ort *</label>
                                 <input type="text" name="city" class="form-input" required>
                             </div>
-                        </div>
-                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
                             <div class="form-group">
-                                <label class="form-label">Klasse (ab Schuljahr 26/27) *</label>
-                                <select name="school_class" class="form-input" required>
-                                    <option value="">Bitte wählen...</option>
-                                    <option>5a</option>
-                                    <option>5b</option>
-                                    <option>5c</option>
-                                    <option>5d</option>
-                                    <option>6a</option>
-                                    <option>6b</option>
-                                    <option>6c</option>
-                                    <option>6d</option>
-                                    <option>7a</option>
-                                    <option>7b</option>
-                                    <option>Andere</option>
-                                </select>
+                                <label class="form-label">Klasse (ab 26/27) *</label>
+                                <input type="text" name="school_class" class="form-input" placeholder="z.B. 5a"
+                                    required>
+                            </div>
+                        </div>
+
+                        <hr class="mb-4">
+
+                        <h4 class="mb-3">Erziehungsberechtigte/r (1)</h4>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                            <div class="form-group">
+                                <label class="form-label">Vorname *</label>
+                                <input type="text" name="parent1_firstname" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Klassenlehrer/in (falls bekannt)</label>
-                                <input type="text" name="teacher" class="form-input">
+                                <label class="form-label">Nachname *</label>
+                                <input type="text" name="parent1_lastname" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                            <div class="form-group">
+                                <label class="form-label">Telefonnummer *</label>
+                                <input type="tel" name="parent1_phone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">E-Mail-Adresse *</label>
+                                <input type="email" name="email" class="form-input" required>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Step 3: Eltern -->
-                    <div class="form-step" id="step-3">
-                        <h3 class="form-step-title">👨‍👩‍👧 Erziehungsberechtigte</h3>
-                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
-                            <div class="form-group">
-                                <label class="form-label">Vorname (Elternteil 1) *</label>
-                                <input type="text" name="parent1_firstname" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Nachname (Elternteil 1) *</label>
-                                <input type="text" name="parent1_lastname" class="form-input" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Telefonnummer *</label>
-                            <input type="tel" name="parent1_phone" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">E-Mail-Adresse *</label>
-                            <input type="email" name="email" class="form-input" required>
-                        </div>
-                        <hr class="mb-3">
-                        <p class="mb-2"><strong>Zweiter Erziehungsberechtigter (Optional)</strong></p>
-                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                    <!-- Step 2: Kontaktdaten & Weiteres -->
+                    <div class="form-step" id="step-2">
+                        <h3 class="form-step-title">👨‍👩‍👧 Weitere Kontaktdaten</h3>
+
+                        <p class="mb-3"><strong>Erziehungsberechtigte/r (2) (Optional)</strong></p>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                             <div class="form-group">
                                 <label class="form-label">Vorname</label>
                                 <input type="text" name="parent2_firstname" class="form-input">
@@ -185,60 +179,258 @@
                                 <input type="text" name="parent2_lastname" class="form-input">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="form-label">Telefonnummer (Elternteil 2)</label>
+                            <input type="tel" name="parent2_phone" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Ggf. abweichende Anschrift der Eltern</label>
+                            <input type="text" name="parent_alt_address" class="form-input"
+                                placeholder="Straße, PLZ, Ort">
+                        </div>
+
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                            <div class="form-group">
+                                <label class="form-label">Beruf (Elternteil 1, freiwillig)</label>
+                                <input type="text" name="parent1_job" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Beruf (Elternteil 2, freiwillig)</label>
+                                <input type="text" name="parent2_job" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Klassenlehrer/in (falls bekannt)</label>
+                            <input type="text" name="teacher" class="form-input">
+                        </div>
                     </div>
 
-                    <!-- Step 4: Zahlungsdaten -->
+                    <!-- Step 3: Module & Leistungen -->
+                    <div class="form-step" id="step-3">
+                        <h3 class="form-step-title">🎒 Leistungen & Module</h3>
+                        <p class="mb-4">Bitte wählen Sie die gewünschten Betreuungsangebote aus.</p>
+
+                        <!-- Hausaufgabenhilfe -->
+                        <div class="card mb-4" style="border: 1px solid var(--color-gray-200);">
+                            <div class="custom-control flex items-center mb-3">
+                                <input type="checkbox" name="module_homework" id="check-homework"
+                                    style="width: 20px; height: 20px; margin-right: 10px;">
+                                <label for="check-homework"><strong>Hausaufgabenhilfe</strong></label>
+                            </div>
+                            <div id="details-homework"
+                                style="padding-left: 30px; border-left: 2px solid var(--color-primary); margin-top: 10px;">
+                                <div class="form-group">
+                                    <label class="form-label">Ausschlusszeiten (Tage/Zeiten, an denen keine Teilnahme
+                                        möglich ist)</label>
+                                    <input type="text" name="homework_exclusion" class="form-input"
+                                        placeholder="z.B. Dienstag ab 14 Uhr">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Geh-Erlaubnis nach Erledigung vor 15:00 Uhr?</label>
+                                    <select name="homework_leave_early" class="form-input">
+                                        <option value="Nein">Nein</option>
+                                        <option value="Ja">Ja</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Falls Nein: Betreuung bis...</label>
+                                    <select name="homework_stay_until" class="form-input">
+                                        <option value="15:00">15:00 Uhr</option>
+                                        <option value="15:30">15:30 Uhr</option>
+                                    </select>
+                                </div>
+                                <div class="custom-control flex items-center">
+                                    <input type="checkbox" name="homework_consent_sheets" id="homework-sheets"
+                                        style="width: 16px; height: 16px; margin-right: 10px;">
+                                    <label for="homework-sheets"><small>Zustimmung zu bedarfsorientierten Förderaufgaben
+                                            (z.B. Übungsblätter)</small></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mittagessen -->
+                        <div class="card mb-4" style="border: 1px solid var(--color-gray-200);">
+                            <div class="custom-control flex items-center mb-3">
+                                <input type="checkbox" name="module_lunch" id="check-lunch"
+                                    style="width: 20px; height: 20px; margin-right: 10px;">
+                                <label for="check-lunch"><strong>Teilnahme am Mittagessen</strong></label>
+                            </div>
+                            <div id="details-lunch"
+                                style="padding-left: 30px; border-left: 2px solid var(--color-secondary); margin-top: 10px;">
+                                <label class="form-label">Wochentage der Teilnahme:</label>
+                                <div class="flex gap-2 mb-3" style="flex-wrap: wrap;">
+                                    <label><input type="checkbox" name="lunch_day_mo"> Mo</label>
+                                    <label><input type="checkbox" name="lunch_day_di"> Di</label>
+                                    <label><input type="checkbox" name="lunch_day_mi"> Mi</label>
+                                    <label><input type="checkbox" name="lunch_day_do"> Do</label>
+                                    <label><input type="checkbox" name="lunch_day_fr"> Fr</label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Voraussichtlicher Beginn (Monat/Jahr)</label>
+                                    <input type="text" name="lunch_start" class="form-input" placeholder="z.B. 08/2026">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Übermittagsbetreuung -->
+                        <div class="card mb-4" style="border: 1px solid var(--color-gray-200);">
+                            <div class="custom-control flex items-center mb-3">
+                                <input type="checkbox" name="module_afternoon" id="check-afternoon"
+                                    style="width: 20px; height: 20px; margin-right: 10px;">
+                                <label for="check-afternoon"><strong>Übermittagsbetreuung (ÜMB)</strong></label>
+                            </div>
+                            <div id="details-afternoon"
+                                style="padding-left: 30px; border-left: 2px solid var(--color-accent); margin-top: 10px;">
+                                <div class="custom-control flex items-center">
+                                    <input type="checkbox" name="afternoon_inclusion" id="inclusion-child"
+                                        style="width: 16px; height: 16px; margin-right: 10px;">
+                                    <label for="inclusion-child">Status als Inklusionskind</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Gesundheit & Notfall -->
                     <div class="form-step" id="step-4">
-                        <h3 class="form-step-title">💳 Zahlungsdaten (SEPA)</h3>
-                        <p class="mb-3">Der monatliche Beitrag wird per Lastschrift eingezogen.</p>
+                        <h3 class="form-step-title">🏥 Gesundheit & Notfall</h3>
+
                         <div class="form-group">
-                            <label class="form-label">Kontoinhaber *</label>
+                            <label class="form-label">Krankenversicherung des Kindes *</label>
+                            <input type="text" name="health_insurance" class="form-input"
+                                placeholder="Name der Versicherung" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Bestehende Erkrankungen / Allergien / Unverträglichkeiten</label>
+                            <textarea name="health_allergies" class="form-textarea"
+                                placeholder="Bitte hier alle wichtigen medizinischen Informationen eintragen"></textarea>
+                        </div>
+
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                            <div class="form-group">
+                                <label class="form-label">ADHS/ADS bekannt?</label>
+                                <select name="health_adhs" class="form-input">
+                                    <option value="Nein">Nein</option>
+                                    <option value="Ja">Ja</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">LRS bekannt?</label>
+                                <select name="health_lrs" class="form-input">
+                                    <option value="Nein">Nein</option>
+                                    <option value="Ja">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Zusätzliche Notfall-Telefonnummer (Name + Nummer) *</label>
+                            <input type="text" name="emergency_contact" class="form-input"
+                                placeholder="z.B. Oma Müller: 0123/456789" required>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: SEPA Mandat -->
+                    <div class="form-step" id="step-5">
+                        <h3 class="form-step-title">💳 SEPA-Lastschriftmandat</h3>
+
+                        <div class="info-box mb-4" style="font-size: 0.9rem;">
+                            <p><strong>Zahlungsempfänger:</strong> Ziel e.V., Schlehecken 5A, 51429 Bergisch Gladbach
+                            </p>
+                            <p><strong>Gläubiger-Identifikationsnummer:</strong> DE65ZZZ00000079018</p>
+                            <p><strong>Mandatsreferenz:</strong> (Wird separat mitgeteilt)</p>
+                            <p class="mb-0">Ich ermächtige den Ziel e.V., Zahlungen von meinem Konto mittels Lastschrift
+                                einzuziehen. Zugleich weise ich mein Kreditinstitut an, die vom Ziel e.V. auf mein Konto
+                                gezogenen Lastschriften einzulösen.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Vollständiger Name des Kontoinhabers *</label>
                             <input type="text" name="bank_owner" class="form-input" required>
                         </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Anschrift des Kontoinhabers (falls abweichend)</label>
+                            <input type="text" name="bank_owner_address" class="form-input"
+                                placeholder="Straße, PLZ, Ort">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Kreditinstitut *</label>
+                            <input type="text" name="bank_name" class="form-input" required>
+                        </div>
+
                         <div class="form-group">
                             <label class="form-label">IBAN *</label>
                             <input type="text" name="iban" id="iban-input" class="form-input" placeholder="DE..."
                                 required>
                             <small id="iban-helper" class="mt-1 d-block"></small>
                         </div>
+
+                        <div class="info-box info-box--warning" style="font-size: 0.8rem; margin-top: 10px;">
+                            Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die
+                            Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut
+                            vereinbarten Bedingungen.
+                        </div>
+
                         <div class="custom-control" id="jobcenter-control">
                             <input type="checkbox" name="jobcenter" id="jobcenter-check">
                             <label for="jobcenter-check">
-                                <strong>Jobcenter-Förderung</strong><br>
-                                <small>Ich beziehe Leistungen vom Jobcenter und benötige das Antragsformular für
-                                    BuT.</small>
+                                <strong>Jobcenter-Förderung (BuT)</strong><br>
+                                <small>Ich beziehe Leistungen vom Jobcenter und benötige das Antragsformular für Bildung
+                                    und Teilhabe.</small>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Step 5: Bestätigung -->
-                    <div class="form-step" id="step-5">
+                    <!-- Step 6: Abschluss -->
+                    <div class="form-step" id="step-6">
                         <h3 class="form-step-title">📜 Abschluss & Datenschutz</h3>
-                        <div class="info-box mb-3">
-                            <p class="mb-0">Bitte überprüfen Sie Ihre Angaben noch einmal sorgfältig.</p>
+
+                        <div class="card mb-4 bg-light">
+                            <ul style="font-size: 0.9rem; margin-bottom: 0;">
+                                <li>Kündigungsfrist: 3 Monate zum Monatsende.</li>
+                                <li>Abmeldung muss schriftlich erfolgen.</li>
+                                <li>Verpflichtung zur Einhaltung der Hausordnung & Gruppenregeln.</li>
+                            </ul>
                         </div>
-                        <div class="custom-control" id="dsgvo-control">
+
+                        <div class="custom-control mb-3">
                             <input type="checkbox" name="dsgvo" id="dsgvo-check" required>
-                            <label for="dsgvo-check">
+                            <label for="dsgvo-check" style="font-size: 0.9rem;">
                                 <strong>Datenschutz-Einwilligung *</strong><br>
-                                <small>Ich stimme der Verarbeitung meiner Daten zum Zweck der Anmeldung zu. Ich habe die
-                                    <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen.</small>
+                                <small>Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>
+                                    gelesen und bin mit der Verarbeitung meiner Daten zum Zweck der Vereinsverwaltung
+                                    einverstanden.</small>
                             </label>
                         </div>
-                        <div class="custom-control" id="legal-control">
+
+                        <div class="custom-control mb-3">
                             <input type="checkbox" name="legal_accept" id="legal-check" required>
-                            <label for="legal-check">
-                                <strong>Vertragsbedingungen *</strong><br>
-                                <small>Ich bestätige die Richtigkeit der Angaben und melde mein Kind hiermit verbindlich
-                                    beim Ziel e.V. an.</small>
+                            <label for="legal-check" style="font-size: 0.9rem;">
+                                <strong>Verbindliche Anmeldung *</strong><br>
+                                <small>Ich bestätige die Richtigkeit aller Angaben. Mit dem Absenden melde ich mein Kind
+                                    für das Schuljahr 2026/2027 zahlungspflichtig an.</small>
+                            </label>
+                        </div>
+
+                        <div class="custom-control">
+                            <input type="checkbox" name="rules_accept" id="rules-check" required>
+                            <label for="rules-check" style="font-size: 0.9rem;">
+                                <strong>Hausordnung & Handyverbot *</strong><br>
+                                <small>Ich erkenne die Gruppenregeln (u.a. Handyverbot während der Betreuungszeit)
+                                    an.</small>
                             </label>
                         </div>
                     </div>
 
                     <!-- Form Footer Buttons -->
-                    <div class="form-footer">
+                    <div class="form-footer"
+                        style="padding: var(--spacing-xl); background: var(--color-gray-50); display: flex; justify-content: space-between;">
                         <button type="button" class="btn btn--secondary" id="btn-prev"
-                            style="visibility: hidden;">Zurück</button>
+                            style="visibility: hidden; color: var(--color-gray-700); border-color: var(--color-gray-300);">Zurück</button>
                         <button type="button" class="btn btn--accent" id="btn-next">Weiter</button>
                         <button type="submit" class="btn btn--accent" id="btn-submit"
                             style="display: none;">Kostenpflichtig anmelden</button>
@@ -250,7 +442,8 @@
                     <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
                     <h2>Vielen Dank!</h2>
                     <p>Die Anmeldung wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung per E-Mail an
-                        <span id="display-email"></span>.</p>
+                        <span id="display-email"></span>.
+                    </p>
                     <a href="index.html" class="btn btn--accent mt-3">Zurück zur Startseite</a>
                 </div>
             </div>
