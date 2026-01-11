@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitBtn = document.getElementById('newsletter-submit');
 
     // ⚠️ WICHTIG: Diese URL nach der Web-App-Bereitstellung ersetzen!
-    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyOmgIB_wwWYcPVCxciYeC5f6BmpXoTAXINAofw7p4Gdi3oGmNjkutCRGEGnuNgTJuv/exec';
+    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxZwgX3tdEl16Hrarvgl-WehNlUX29WrRRLdAZMwnWB2AHlJ4jy5h1jjEBGYHZppcAZKQ/exec';
 
     if (form) {
         form.addEventListener('submit', async function (e) {
