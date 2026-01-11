@@ -9,13 +9,13 @@ INTERNER_DEVELOPER_GUIDE.md
 Ionos.txt
 
 # --- Dokumentation & Anleitungen ---
-docs/
+/docs/
 !docs/DOMAIN_SETUP_IONOS.md
-widgets/
+/widgets/
 
 # --- Backend Scripte (werden manuell in Google Apps Script kopiert) ---
-scripts/
-Migration/
+/scripts/
+/Migration/
 
 # --- System & OS Dateien ---
 .DS_Store
