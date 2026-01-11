@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ziel e.V. Leistungen - Hausaufgabenbetreuung, Übermittagsbetreuung und Förderung für Schüler in Bergisch Gladbach">
+    <title>Leistungen - Ziel e.V.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="assets/migration/Ziel Logo Mittel.png" alt="Ziel e.V. Logo">
+                <span>Ziel e.V.</span>
+            </a>
+            <nav class="nav">
+                <button class="nav__toggle" aria-label="Menü öffnen" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="leistungen.html" class="nav__link nav__link--active">Leistungen</a></li>
+                    <li><a href="team.html" class="nav__link">Team</a></li>
+                    <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
+                </ul>
+                <a href="kontakt.html" class="nav__cta">Jetzt anmelden</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="padding: 3rem 0;">
+        <div class="hero__content">
+            <h1 class="hero__title">Unsere Leistungen</h1>
+            <p class="hero__subtitle">Qualifizierte Betreuung für Schüler der Johannes-Gutenberg-Realschule</p>
+        </div>
+    </section>
+
+    <!-- Hausaufgabenbetreuung -->
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-4 text-center">📚 Hausaufgabenbetreuung</h2>
+
+            <div class="card-grid" style="grid-template-columns: 1.2fr 0.8fr;">
+                <div>
+                    <img src="assets/migration/Hausaufgabenhilfe Bild.avif" alt="Hausaufgabenhilfe"
+                        style="width: 100%; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg); height: 300px; object-fit: cover;">
+                    <p>
+                        Unsere qualifizierte Hausaufgabenbetreuung unterstützt Schüler bei der Erledigung
+                        ihrer täglichen Hausaufgaben. Wir fördern gezielt in den Hauptfächern und helfen
+                        bei Verständnisproblemen.
+                    </p>
+
+                    <h4 class="mb-2">Das bieten wir:</h4>
+                    <ul class="service-list">
+                        <li>Tägliche Hausaufgabenhilfe</li>
+                        <li>Förderung in den Hauptfächern (Deutsch, Mathematik, Englisch)</li>
+                        <li>Kleine Gruppen für individuelle Betreuung</li>
+                        <li>Qualifizierte Betreuer</li>
+                        <li>Ruhige Lernumgebung</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4 class="card__title">⏰ Betreuungszeiten</h4>
+                    <p><strong>Montag - Donnerstag:</strong><br>13:30 - 16:00 Uhr</p>
+                    <p><strong>Freitag:</strong><br>13:30 - 15:00 Uhr</p>
+                    <p class="mb-0" style="font-size: 0.9rem; color: var(--color-gray-500);">
+                        Zeiten können je nach Stundenplan variieren.
+                    </p>
+
+                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--color-gray-200);">
+
+                    <h4 class="card__title">📄 Flyer Download</h4>
+                    <a href="assets/migration/Hausaufgabenhilfe flyer.avif" class="btn btn--accent" style="width: 100%;"
+                        download>Flyer öffnen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Übermittagsbetreuung -->
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="mb-4 text-center">🍽️ Übermittagsbetreuung & Mittagessen</h2>
+
+            <div class="card-grid" style="grid-template-columns: 0.8fr 1.2fr;">
+                <div class="card" style="height: fit-content;">
+                    <h4 class="card__title">🍴 Mittagessen-Abo</h4>
+                    <img src="assets/migration/Mittagessen Bild.avif" alt="Mittagessen"
+                        style="width: 100%; border-radius: var(--radius-md); margin-bottom: 1rem; height: 150px; object-fit: cover;">
+                    <p>
+                        Wir bieten ein optionales Mittagessen-Abo an.
+                        Die Kosten werden separat abgerechnet.
+                    </p>
+                    <img src="assets/migration/Mitagessen Abo QR.avif" alt="QR Code Mittagessen"
+                        style="width: 150px; margin: 1rem auto; display: block;">
+                    <p class="text-center" style="font-size: 0.9rem; color: var(--color-gray-500);">
+                        QR-Code für das Abo-Portal
+                    </p>
+                    <a href="assets/migration/Mittagessen Flyer.avif" class="btn btn--secondary"
+                        style="width: 100%; color: var(--color-primary); border-color: var(--color-primary);"
+                        download>Speiseplan/Flyer</a>
+                </div>
+
+                <div>
+                    <img src="assets/migration/Übermittagsbetreuung Bild.avif" alt="Übermittagsbetreuung"
+                        style="width: 100%; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg); height: 250px; object-fit: cover;">
+                    <p>
+                        Für Schüler, die auch über Mittag betreut werden möchten, bieten wir
+                        die Übermittagsbetreuung inklusive Mittagessen an.
+                    </p>
+
+                    <h4 class="mb-2">Leistungen:</h4>
+                    <ul class="service-list">
+                        <li>Betreuung ab Schulschluss</li>
+                        <li>Warmes Mittagessen (optional als Abo)</li>
+                        <li>Freizeitgestaltung vor den Hausaufgaben</li>
+                        <li>Gemeinsames Mittagessen in der Gruppe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preise -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="mb-4">💰 Monatlicher Beitrag</h2>
+
+            <div class="price-box" style="max-width: 400px; margin: 0 auto;">
+                <p style="margin-bottom: 0.5rem; opacity: 0.8;">Elternbeitrag</p>
+                <div class="price-box__amount">ca. 75 €</div>
+                <p class="price-box__period">pro Monat</p>
+            </div>
+
+            <div class="info-box" style="max-width: 600px; margin: 2rem auto; text-align: left;">
+                <div class="info-box__title">ℹ️ Wichtige Hinweise</div>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Kündigungsfrist:</strong> 3 Monate zum Monatsende</li>
+                    <li><strong>Jobcenter-Förderung:</strong> Bei Bezug von Leistungen möglich</li>
+                    <li><strong>Geschwisterrabatt:</strong> Bitte bei der Anmeldung anfragen</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--dark">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: 1rem;">Jetzt online anmelden</h2>
+            <p style="opacity: 0.9; margin-bottom: 1.5rem;">
+                Besuchen Sie unsere Kontaktseite für die direkte Online-Anmeldung
+                für das kommende Schuljahr.
+            </p>
+            <a href="kontakt.html" class="btn btn--primary">🎯 Zur Online-Anmeldung</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <img src="assets/migration/Ziel Logo Groß.png" alt="Ziel e.V. Logo"
+                        style="height: 60px; margin-bottom: var(--spacing-md); filter: brightness(0) invert(1);">
+                    <p>Gemeinnütziger Verein zur außerschulischen Betreuung.</p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Navigation</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Rechtliches</h4>
+                    <ul class="footer__list">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Kontakt</h4>
+                    <p>Schlehecken 5a<br>51429 Bergisch Gladbach<br>
+                        <a href="mailto:ziel.ev@web.de">ziel.ev@web.de</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Ziel e.V. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+```

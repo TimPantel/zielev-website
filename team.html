@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Das Team von Ziel e.V. - Lernen Sie unsere Betreuer kennen">
+    <title>Team - Ziel e.V.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="assets/migration/Ziel Logo Mittel.png" alt="Ziel e.V. Logo">
+                <span>Ziel e.V.</span>
+            </a>
+            <nav class="nav">
+                <button class="nav__toggle" aria-label="Menü öffnen" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="leistungen.html" class="nav__link">Leistungen</a></li>
+                    <li><a href="team.html" class="nav__link nav__link--active">Team</a></li>
+                    <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
+                </ul>
+                <a href="kontakt.html" class="nav__cta">Jetzt anmelden</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="padding: 3rem 0;">
+        <div class="hero__content">
+            <h1 class="hero__title">Unser Team</h1>
+            <p class="hero__subtitle">Engagierte Menschen, die Ihr Kind begleiten</p>
+        </div>
+    </section>
+
+    <!-- Team Intro -->
+    <section class="section">
+        <div class="container">
+            <div class="card-grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
+                <div>
+                    <h2 class="mb-3">👋 Wir sind für Sie da</h2>
+                    <p>
+                        Unser Team besteht aus engagierten Betreuern, die mit Leidenschaft
+                        und Kompetenz die Schüler bei ihren Hausaufgaben unterstützen.
+                        Wir schaffen eine positive Lernumgebung, in der sich jedes Kind
+                        wohlfühlen kann.
+                    </p>
+                    <p>
+                        Die pädagogische Begleitung und die Förderung der sozialen Kompetenzen
+                        stehen bei uns im Mittelpunkt der täglichen Arbeit.
+                    </p>
+                </div>
+                <div class="card" style="padding: 0; overflow: hidden; border-radius: var(--radius-xl);">
+                    <img src="assets/migration/Unsere Motivation Bild.webp" alt="Team bei der Arbeit"
+                        style="width: 100%; height: 350px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Values -->
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="text-center mb-5">Was uns antreibt</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card__icon">💖</div>
+                    <h3 class="card__title">Unsere Motivation</h3>
+                    <p class="card__text">
+                        Unsere Arbeit ist unsere Leidenschaft und ein positiver Antrieb für jeden neuen Tag.
+                        Sie bringt uns dazu, Herausforderung als Chance zu verstehen und neue Ziele zu erreichen.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card__icon">🤝</div>
+                    <h3 class="card__title">Unsere Werte</h3>
+                    <p class="card__text">
+                        Warum man auf uns zählen kann? Weil unser Verein mehr ist, als nur ein Business.
+                        Jede Person in unserem Team ist einzigartig – und wir alle teilen die gleichen Werte.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card__icon">🎯</div>
+                    <h3 class="card__title">Individuelle Förderung</h3>
+                    <p class="card__text">
+                        Jedes Kind ist einzigartig. Wir erkennen Stärken und Schwächen
+                        und fördern entsprechend individuell in kleinen, überschaubaren Gruppen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us -->
+    <section class="section">
+        <div class="container text-center">
+            <div class="info-box" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="info-box__title" style="justify-content: center;">🙋 Werden Sie Teil unseres Teams!</div>
+                <p>
+                    Sie interessieren sich für eine Mitarbeit beim Ziel e.V.?
+                    Wir freuen uns über engagierte Verstärkung für unser Team.
+                </p>
+                <a href="kontakt.html" class="btn btn--accent">Jetzt bewerben</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <img src="assets/migration/Ziel Logo Groß.png" alt="Ziel e.V. Logo"
+                        style="height: 60px; margin-bottom: var(--spacing-md); filter: brightness(0) invert(1);">
+                    <p>Gemeinnütziger Verein zur außerschulischen Betreuung.</p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Navigation</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Rechtliches</h4>
+                    <ul class="footer__list">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Kontakt</h4>
+                    <p>Schlehecken 5a<br>51429 Bergisch Gladbach<br>
+                        <a href="mailto:ziel.ev@web.de">ziel.ev@web.de</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Ziel e.V. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+# Ziel e.V. - GitHub Sync Filter
+# Diese Datei verhindert, dass interne Dokumente und Scripte im öffentlichen Web-Repo landen.
+
+# --- Interne Management-Dateien ---
+PROJEKT_HANDBUCH.md
+ROADMAP.md
+VOLLSTAENDIGE_ANLEITUNG.md
+INTERNER_DEVELOPER_GUIDE.md
+
+# --- Dokumentation & Anleitungen ---
+docs/
+widgets/
+
+# --- Backend Scripte (werden manuell in Google Apps Script kopiert) ---
+scripts/
+Migration/
+
+# --- System & OS Dateien ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Dateien die im Repo bleiben sollen (Explizit erlaubt) ---
+!index.html
+!kontakt.html
+!leistungen.html
+!team.html
+!impressum.html
+!datenschutz.html
+!css/
+!js/
+!assets/
+!README.md
+!.gitignore

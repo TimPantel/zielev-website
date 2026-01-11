@@ -2,17 +2,15 @@
 
 ## Phase 1: MVP (Minimum Viable Product) ✅
 
-**Status:** In Umsetzung
+**Status:** Abgeschlossen (Umzug auf GitHub Pages)
 
 - [x] Projektstruktur erstellen
 - [x] Dokumentation anlegen
 - [x] Google Forms mit Grundfeldern einrichten
 - [x] Google Sheets Verknüpfung
-- [ ] Apps Script: E-Mail-Automatisierung
-- [ ] Apps Script: IBAN-Validierung
-- [ ] Apps Script: Wöchentliche Backups
-- [ ] Jimdo iFrame-Einbettung
-- [ ] Testlauf mit Echtdaten
+- [x] Apps Script: E-Mail-Automatisierung & Logik
+- [x] Umstieg auf GitHub Pages (Ersatz für Jimdo)
+- [ ] Testlauf mit Echtdaten (nach Neu-Setup durch User)
 
 ---
 

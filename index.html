@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ziel e.V. - Gemeinnütziger Verein zur außerschulischen Betreuung von Schülern in Bergisch Gladbach. Qualifizierte Hausaufgabenhilfe und Förderung.">
+    <meta name="keywords"
+        content="Ziel e.V., Hausaufgabenbetreuung, OGS, Bergisch Gladbach, Bensberg, Nachhilfe, Schülerbetreuung">
+    <title>Ziel e.V. - Hausaufgabenbetreuung in Bergisch Gladbach</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="assets/migration/Ziel Logo Mittel.png" alt="Ziel e.V. Logo">
+                <span>Ziel e.V.</span>
+            </a>
+
+            <nav class="nav">
+                <button class="nav__toggle" aria-label="Menü öffnen" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+                    <li><a href="leistungen.html" class="nav__link">Leistungen</a></li>
+                    <li><a href="team.html" class="nav__link">Team</a></li>
+                    <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
+                </ul>
+
+                <a href="kontakt.html" class="nav__cta">Jetzt anmelden</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">Willkommen beim Ziel e.V.</h1>
+            <p class="hero__subtitle">
+                Gemeinnütziger Verein zur außerschulischen Betreuung von Schülern
+                der Johannes-Gutenberg-Realschule in Bergisch Gladbach-Bensberg
+            </p>
+            <div class="hero__buttons">
+                <a href="kontakt.html" class="btn btn--primary">🎯 Online anmelden</a>
+                <a href="leistungen.html" class="btn btn--secondary">Unsere Leistungen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wichtige Ankündigung -->
+    <section class="section">
+        <div class="container">
+            <div class="info-box info-box--warning">
+                <div class="info-box__title">
+                    <span>📢</span>
+                    <span>Wichtige Information zur Anmeldung</span>
+                </div>
+                <p class="mb-0">
+                    <strong>Anmeldung für das Schuljahr 2026/2027:</strong>
+                    Bitte melden Sie sich bis zum <strong>01.06.2026</strong> an.
+                    Spätere Anmeldungen werden auf die Warteliste gesetzt.
+                    <strong>Der Ziel e.V. ist nun vollständig digital!</strong> Ab sofort nutzen wir unser
+                    bequemes <strong>Online-Anmeldeformular</strong> anstelle von Papierverträgen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unser Verein -->
+    <section class="section">
+        <div class="container">
+            <div class="card-grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
+                <div>
+                    <h2 class="mb-3">Unser Verein</h2>
+                    <p>
+                        Der Verein Ziel e.V. ist ein gemeinnütziger Verein. Vereinszweck ist u.a. die außerschulische
+                        Betreuung von Schülern der Johannes-Gutenberg-Realschule.
+                    </p>
+                    <p>
+                        Wir bieten der Johannes-Gutenberg-Realschule in Bergisch Gladbach-Bensberg im Anschluss
+                        an den Unterricht eine qualifizierte Hausaufgabenhilfe sowie Förderung in den Hauptfächern an,
+                        vorrangig für Schüler der Klassen 5 und 6.
+                    </p>
+                    <div class="info-box mt-3">
+                        <strong>Bitte beachten Sie unsere Anmeldefristen!</strong>
+                    </div>
+                </div>
+                <div class="card" style="padding: 0; overflow: hidden; border-radius: var(--radius-xl);">
+                    <img src="assets/migration/Unsere Werte Bild.webp" alt="Ziel e.V. Verein"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warum Ziel e.V. -->
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="text-center mb-4">Warum Ziel e.V.?</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card__icon">📚</div>
+                    <h3 class="card__title">Hausaufgabenhilfe</h3>
+                    <p class="card__text">
+                        Qualifizierte Unterstützung und gezielte Förderung in den Hauptfächern.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card__icon">👨‍👩‍👧‍👦</div>
+                    <h3 class="card__title">Individuell</h3>
+                    <p class="card__text">
+                        Kleine Gruppen ermöglichen eine persönliche Betreuung in familiärer Atmosphäre.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card__icon">🍽️</div>
+                    <h3 class="card__title">Mittagessen</h3>
+                    <p class="card__text">
+                        Optionales Mittagessen-Abo für eine gesunde Verpflegung nach der Schule.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card__icon">💰</div>
+                    <h3 class="card__title">Gemeinnützig</h3>
+                    <p class="card__text">
+                        Faire, transparente Beiträge ohne Gewinnabsicht zum Wohle der Kinder.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motivation & Werte -->
+    <section class="section">
+        <div class="container">
+            <div class="card-grid">
+                <!-- Motivation -->
+                <div class="card" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <img src="assets/migration/Unsere Motivation Bild.webp" alt="Motivation"
+                        style="border-radius: var(--radius-md); height: 200px; object-fit: cover;">
+                    <h3>Unsere Motivation</h3>
+                    <p>
+                        Unsere Arbeit ist unsere Leidenschaft und ein positiver Antrieb für jeden neuen Tag.
+                        Sie bringt uns dazu, Herausforderung als Chance zu verstehen und neue Ziele zu erreichen.
+                    </p>
+                </div>
+
+                <!-- Werte -->
+                <div class="card" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <div
+                        style="height: 200px; background: var(--color-gray-100); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🤝
+                    </div>
+                    <h3>Unsere Werte</h3>
+                    <p>
+                        Warum man auf uns zählen kann? Weil unser Verein mehr ist als nur ein Business.
+                        Jede Person in unserem Team ist einzigartig – und wir alle teilen die gleichen Werte.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Widget (Interessenliste) -->
+    <section class="section section--dark" id="newsletter">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: var(--spacing-md);">Bleiben Sie informiert</h2>
+            <p class="mb-4">Melden Sie sich für unseren Newsletter an, um keine wichtigen Termine zu verpassen.</p>
+
+            <div id="newsletter-widget-container">
+                <form id="newsletter-form"
+                    style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <input type="text" id="newsletter-vorname" name="vorname" placeholder="Vorname" required
+                        class="form-input">
+                    <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
+                        class="form-input">
+                    <button type="submit" id="newsletter-submit" class="btn btn--primary"
+                        style="color: var(--color-primary); width: 100%;">
+                        ✉️ Jetzt eintragen
+                    </button>
+                    <div id="newsletter-message"
+                        style="display: none; padding: 10px; border-radius: var(--radius-md); margin-top: 10px;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Box -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-box">
+                <h3>📍 So erreichen Sie uns</h3>
+                <p>
+                    <strong>Ziel e.V.</strong><br>
+                    Schlehecken 5a<br>
+                    51429 Bergisch Gladbach
+                </p>
+                <p>
+                    <a href="mailto:ziel.ev@web.de">📧 ziel.ev@web.de</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <img src="assets/migration/Ziel Logo Groß.png" alt="Ziel e.V. Logo"
+                        style="height: 60px; margin-bottom: var(--spacing-md); filter: brightness(0) invert(1);">
+                    <p>Gemeinnütziger Verein zur außerschulischen Betreuung von Schülern in Bergisch Gladbach.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer__title">Navigation</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__title">Rechtliches</h4>
+                    <ul class="footer__list">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__title">Kontakt</h4>
+                    <p>
+                        Schlehecken 5a<br>
+                        51429 Bergisch Gladbach<br>
+                        <a href="mailto:ziel.ev@web.de">ziel.ev@web.de</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 Ziel e.V. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

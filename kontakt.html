@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktieren Sie Ziel e.V. - Wir freuen uns auf Ihre Nachricht">
+    <title>Kontakt - Ziel e.V.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="assets/migration/Ziel Logo Mittel.png" alt="Ziel e.V. Logo">
+                <span>Ziel e.V.</span>
+            </a>
+            <nav class="nav">
+                <button class="nav__toggle" aria-label="Menü öffnen" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="leistungen.html" class="nav__link">Leistungen</a></li>
+                    <li><a href="team.html" class="nav__link">Team</a></li>
+                    <li><a href="kontakt.html" class="nav__link nav__link--active">Kontakt</a></li>
+                </ul>
+                <a href="kontakt.html" class="nav__cta">Jetzt anmelden</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="padding: 3rem 0;">
+        <div class="hero__content">
+            <h1 class="hero__title">Kontakt & Anmeldung</h1>
+            <p class="hero__subtitle">Wir freuen uns auf Ihre Nachricht & Anmeldung</p>
+        </div>
+    </section>
+
+    <!-- Team Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card-grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
+                <div>
+                    <h2>Wir sind für Sie da</h2>
+                    <p class="mb-4">
+                        Unser Team hilft Ihnen jederzeit gerne weiter - nehmen Sie einfach Kontakt zu uns auf!
+                    </p>
+                    <div class="contact-box" style="text-align: left;">
+                        <p class="mb-2"><strong>📧 E-Mail:</strong> <a href="mailto:Ziel.ev@web.de">Ziel.ev@web.de</a>
+                        </p>
+                        <p class="mb-0"><strong>📍 Standort:</strong> Schlehecken 5a, 51429 Bergisch Gladbach</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 0; overflow: hidden; border-radius: var(--radius-xl);">
+                    <img src="assets/migration/Kontakt Bild.avif" alt="Team Kontakt"
+                        style="width: 100%; height: 350px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Section -->
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="text-center mb-4">📝 Online-Anmeldung 2026/2027</h2>
+            <div class="enrollment-form">
+                <!-- Form Header -->
+                <div class="form-header">
+                    <h2>🎯 Online-Anmeldung</h2>
+                    <p>Offene Ganztagsschule Ziel e.V. - Schuljahr 2026/2027</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-step progress-step--active" data-step="1">1</div>
+                    <div class="progress-step" data-step="2">2</div>
+                    <div class="progress-step" data-step="3">3</div>
+                    <div class="progress-step" data-step="4">4</div>
+                    <div class="progress-step" data-step="5">5</div>
+                </div>
+
+                <!-- Form Content -->
+                <form id="ogs-enrollment-form">
+                    <!-- Step 1: Kind Daten -->
+                    <div class="form-step form-step--active" id="step-1">
+                        <h3 class="form-step-title">👤 Angaben zum Kind</h3>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div class="form-group">
+                                <label class="form-label">Vorname des Kindes *</label>
+                                <input type="text" name="child_firstname" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nachname des Kindes *</label>
+                                <input type="text" name="child_lastname" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div class="form-group">
+                                <label class="form-label">Geburtsdatum *</label>
+                                <input type="date" name="child_birthday" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nationalität *</label>
+                                <input type="text" name="child_nationality" class="form-input" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Anschrift -->
+                    <div class="form-step" id="step-2">
+                        <h3 class="form-step-title">🏠 Anschrift & Schule</h3>
+                        <div class="form-group">
+                            <label class="form-label">Straße und Hausnummer *</label>
+                            <input type="text" name="address" class="form-input" required>
+                        </div>
+                        <div class="card-grid" style="grid-template-columns: 1fr 2fr;">
+                            <div class="form-group">
+                                <label class="form-label">PLZ *</label>
+                                <input type="text" name="zip" class="form-input" pattern="[0-9]{5}" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Ort *</label>
+                                <input type="text" name="city" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div class="form-group">
+                                <label class="form-label">Klasse (ab Schuljahr 26/27) *</label>
+                                <select name="school_class" class="form-input" required>
+                                    <option value="">Bitte wählen...</option>
+                                    <option>5a</option>
+                                    <option>5b</option>
+                                    <option>5c</option>
+                                    <option>5d</option>
+                                    <option>6a</option>
+                                    <option>6b</option>
+                                    <option>6c</option>
+                                    <option>6d</option>
+                                    <option>7a</option>
+                                    <option>7b</option>
+                                    <option>Andere</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Klassenlehrer/in (falls bekannt)</label>
+                                <input type="text" name="teacher" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Eltern -->
+                    <div class="form-step" id="step-3">
+                        <h3 class="form-step-title">👨‍👩‍👧 Erziehungsberechtigte</h3>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div class="form-group">
+                                <label class="form-label">Vorname (Elternteil 1) *</label>
+                                <input type="text" name="parent1_firstname" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nachname (Elternteil 1) *</label>
+                                <input type="text" name="parent1_lastname" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Telefonnummer *</label>
+                            <input type="tel" name="parent1_phone" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">E-Mail-Adresse *</label>
+                            <input type="email" name="email" class="form-input" required>
+                        </div>
+                        <hr class="mb-3">
+                        <p class="mb-2"><strong>Zweiter Erziehungsberechtigter (Optional)</strong></p>
+                        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div class="form-group">
+                                <label class="form-label">Vorname</label>
+                                <input type="text" name="parent2_firstname" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nachname</label>
+                                <input type="text" name="parent2_lastname" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Zahlungsdaten -->
+                    <div class="form-step" id="step-4">
+                        <h3 class="form-step-title">💳 Zahlungsdaten (SEPA)</h3>
+                        <p class="mb-3">Der monatliche Beitrag wird per Lastschrift eingezogen.</p>
+                        <div class="form-group">
+                            <label class="form-label">Kontoinhaber *</label>
+                            <input type="text" name="bank_owner" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">IBAN *</label>
+                            <input type="text" name="iban" id="iban-input" class="form-input" placeholder="DE..."
+                                required>
+                            <small id="iban-helper" class="mt-1 d-block"></small>
+                        </div>
+                        <div class="custom-control" id="jobcenter-control">
+                            <input type="checkbox" name="jobcenter" id="jobcenter-check">
+                            <label for="jobcenter-check">
+                                <strong>Jobcenter-Förderung</strong><br>
+                                <small>Ich beziehe Leistungen vom Jobcenter und benötige das Antragsformular für
+                                    BuT.</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Bestätigung -->
+                    <div class="form-step" id="step-5">
+                        <h3 class="form-step-title">📜 Abschluss & Datenschutz</h3>
+                        <div class="info-box mb-3">
+                            <p class="mb-0">Bitte überprüfen Sie Ihre Angaben noch einmal sorgfältig.</p>
+                        </div>
+                        <div class="custom-control" id="dsgvo-control">
+                            <input type="checkbox" name="dsgvo" id="dsgvo-check" required>
+                            <label for="dsgvo-check">
+                                <strong>Datenschutz-Einwilligung *</strong><br>
+                                <small>Ich stimme der Verarbeitung meiner Daten zum Zweck der Anmeldung zu. Ich habe die
+                                    <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen.</small>
+                            </label>
+                        </div>
+                        <div class="custom-control" id="legal-control">
+                            <input type="checkbox" name="legal_accept" id="legal-check" required>
+                            <label for="legal-check">
+                                <strong>Vertragsbedingungen *</strong><br>
+                                <small>Ich bestätige die Richtigkeit der Angaben und melde mein Kind hiermit verbindlich
+                                    beim Ziel e.V. an.</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Form Footer Buttons -->
+                    <div class="form-footer">
+                        <button type="button" class="btn btn--secondary" id="btn-prev"
+                            style="visibility: hidden;">Zurück</button>
+                        <button type="button" class="btn btn--accent" id="btn-next">Weiter</button>
+                        <button type="submit" class="btn btn--accent" id="btn-submit"
+                            style="display: none;">Kostenpflichtig anmelden</button>
+                    </div>
+                </form>
+
+                <!-- Success Screen -->
+                <div id="form-success" class="submission-success" style="display: none;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+                    <h2>Vielen Dank!</h2>
+                    <p>Die Anmeldung wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung per E-Mail an
+                        <span id="display-email"></span>.</p>
+                    <a href="index.html" class="btn btn--accent mt-3">Zurück zur Startseite</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <img src="assets/migration/Ziel Logo Groß.png" alt="Ziel e.V. Logo"
+                        style="height: 60px; margin-bottom: var(--spacing-md); filter: brightness(0) invert(1);">
+                    <p>Gemeinnütziger Verein zur außerschulischen Betreuung.</p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Navigation</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Rechtliches</h4>
+                    <ul class="footer__list">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Kontakt</h4>
+                    <p>Schlehecken 5a<br>51429 Bergisch Gladbach<br>
+                        <a href="mailto:ziel.ev@web.de">ziel.ev@web.de</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Ziel e.V. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
