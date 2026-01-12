@@ -40,7 +40,7 @@
                     <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
                 </ul>
 
-                <a href="kontakt.html" class="nav__cta">Jetzt anmelden</a>
+                <a href="kontakt.html#newsletter" class="nav__cta">Jetzt anmelden</a>
             </nav>
         </div>
     </header>
@@ -54,8 +54,33 @@
                 der Johannes-Gutenberg-Realschule in Bergisch Gladbach-Bensberg
             </p>
             <div class="hero__buttons">
-                <a href="kontakt.html" class="btn btn--primary">🎯 Online anmelden</a>
+                <a href="kontakt.html#newsletter" class="btn btn--primary">🎯 Online anmelden</a>
                 <a href="leistungen.html" class="btn btn--secondary">Unsere Leistungen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Mailverteiler für Anmeldeinformationen (Bleiben Sie informiert) -->
+    <section class="section section--dark" id="newsletter">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mailverteiler für Anmeldeinformationen</h2>
+            <p class="mb-4">Über die eingetragene E-Mail-Adresse werden Sie benachrichtigt, sobald das Anmeldeformular
+                für das Schuljahr 2026 freigeschaltet ist und Sie Ihr Kind anmelden können.</p>
+
+            <div id="newsletter-widget-container">
+                <form id="newsletter-form"
+                    style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <input type="text" id="newsletter-vorname" name="vorname" placeholder="Vorname" required
+                        class="form-input">
+                    <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
+                        class="form-input">
+                    <button type="submit" id="newsletter-submit" class="btn btn--primary"
+                        style="color: var(--color-primary); width: 100%;">
+                        ✉️ Jetzt eintragen
+                    </button>
+                    <div id="newsletter-message"
+                        style="display: none; padding: 10px; border-radius: var(--radius-md); margin-top: 10px;"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -72,8 +97,10 @@
                     <strong>Anmeldung für das Schuljahr 2026/2027:</strong>
                     Bitte melden Sie sich bis zum <strong>01.06.2026</strong> an.
                     Spätere Anmeldungen werden auf die Warteliste gesetzt.
-                    <strong>Der Ziel e.V. ist nun vollständig digital!</strong> Ab sofort nutzen wir unser
-                    bequemes <strong>Online-Anmeldeformular</strong> anstelle von Papierverträgen.
+                    <strong>Der Ziel e.V. wird digital!</strong> Wir arbeiten derzeit an unserem neuen
+                    bequemen <strong>Online-Anmeldeformular</strong>. Bitte tragen Sie sich oben in den E-Mailverteiler
+                    ein,
+                    um sofort benachrichtigt zu werden, wenn die Anmeldung freigeschaltet wird.
                 </p>
             </div>
         </div>
@@ -178,29 +205,7 @@
         </div>
     </section>
 
-    <!-- Newsletter Widget (Interessenliste) -->
-    <section class="section section--dark" id="newsletter">
-        <div class="container text-center">
-            <h2 style="color: white; margin-bottom: var(--spacing-md);">Bleiben Sie informiert</h2>
-            <p class="mb-4">Melden Sie sich für unseren Newsletter an, um keine wichtigen Termine zu verpassen.</p>
 
-            <div id="newsletter-widget-container">
-                <form id="newsletter-form"
-                    style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-md);">
-                    <input type="text" id="newsletter-vorname" name="vorname" placeholder="Vorname" required
-                        class="form-input">
-                    <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
-                        class="form-input">
-                    <button type="submit" id="newsletter-submit" class="btn btn--primary"
-                        style="color: var(--color-primary); width: 100%;">
-                        ✉️ Jetzt eintragen
-                    </button>
-                    <div id="newsletter-message"
-                        style="display: none; padding: 10px; border-radius: var(--radius-md); margin-top: 10px;"></div>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- Kontakt Box -->
     <section class="section">

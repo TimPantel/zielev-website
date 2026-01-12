@@ -27,7 +27,7 @@
                     <li><a href="team.html" class="nav__link">Team</a></li>
                     <li><a href="kontakt.html" class="nav__link nav__link--active">Kontakt</a></li>
                 </ul>
-                <a href="kontakt.html" class="nav__cta">Jetzt anmelden</a>
+                <a href="kontakt.html#newsletter" class="nav__cta">Jetzt anmelden</a>
             </nav>
         </div>
     </header>
@@ -36,7 +36,32 @@
     <section class="hero" style="padding: 3rem 0;">
         <div class="hero__content">
             <h1 class="hero__title">Kontakt & Anmeldung</h1>
-            <p class="hero__subtitle">Wir freuen uns auf Ihre Nachricht & Anmeldung</p>
+            <p class="hero__subtitle">Nutzen Sie unseren E-Mailverteiler für Informationen zur Anmeldung 2026</p>
+        </div>
+    </section>
+
+    <!-- E-Mailverteiler für Anmeldeinformationen (Bleiben Sie informiert) -->
+    <section class="section section--dark" id="newsletter">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mailverteiler für Anmeldeinformationen</h2>
+            <p class="mb-4">Über die eingetragene E-Mail-Adresse werden Sie benachrichtigt, sobald das Anmeldeformular
+                für das Schuljahr 2026 freigeschaltet ist und Sie Ihr Kind anmelden können.</p>
+
+            <div id="newsletter-widget-container">
+                <form id="newsletter-form"
+                    style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <input type="text" id="newsletter-vorname" name="vorname" placeholder="Vorname" required
+                        class="form-input">
+                    <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
+                        class="form-input">
+                    <button type="submit" id="newsletter-submit" class="btn btn--primary"
+                        style="color: var(--color-primary); width: 100%;">
+                        ✉️ Jetzt eintragen
+                    </button>
+                    <div id="newsletter-message"
+                        style="display: none; padding: 10px; border-radius: var(--radius-md); margin-top: 10px;"></div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -67,7 +92,17 @@
     <section class="section section--alt">
         <div class="container">
             <h2 class="text-center mb-4">📝 Online-Anmeldung 2026/2027</h2>
-            <div class="enrollment-form">
+            <div class="enrollment-form enrollment-form--disabled">
+                <!-- Overlay Notice -->
+                <div class="enrollment-form__overlay">
+                    <div class="overlay-notice">
+                        <h3>🚧 In Bearbeitung</h3>
+                        <p>Das Anmeldeformular befindet sich derzeit noch in Bearbeitung. Bitte tragen Sie sich oben in
+                            unseren <strong>E-Mailverteiler für Anmeldeinformationen</strong> ein, um benachrichtigt zu
+                            werden, sobald die Anmeldung möglich ist.</p>
+                        <a href="#newsletter" class="btn btn--accent">Zum E-Mailverteiler</a>
+                    </div>
+                </div>
                 <!-- Form Header -->
                 <div class="form-header">
                     <h2>🎯 Online-Anmeldung</h2>

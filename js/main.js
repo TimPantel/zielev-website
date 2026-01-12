@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 // Bei no-cors können wir die Antwort nicht lesen, also zeigen wir Erfolg an
-                showMessage('success', '✅ Vielen Dank! Sie wurden erfolgreich in unsere Interessentenliste eingetragen. Wir melden uns, sobald das Online-Anmeldeformular verfügbar ist!');
+                showMessage('success', '✅ Vielen Dank! Sie wurden erfolgreich in unseren E-Mailverteiler eingetragen. Wir werden Sie unter der angegebenen E-Mail-Adresse benachrichtigen, sobald das Anmeldeformular für das Schuljahr 2026 freigeschaltet ist und Sie Ihr Kind anmelden können.');
                 form.reset();
 
             } catch (error) {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 showMessage('error', '❌ Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.textContent = '✉️ Auf die Interessentenliste setzen';
+                submitBtn.textContent = '✉️ Jetzt eintragen';
             }
         });
     }

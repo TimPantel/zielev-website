@@ -28,7 +28,7 @@
                     <li><a href="team.html" class="nav__link">Team</a></li>
                     <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
                 </ul>
-                <a href="kontakt.html" class="nav__cta">Jetzt anmelden</a>
+                <a href="kontakt.html#newsletter" class="nav__cta">Jetzt anmelden</a>
             </nav>
         </div>
     </header>
@@ -38,6 +38,31 @@
         <div class="hero__content">
             <h1 class="hero__title">Unsere Leistungen</h1>
             <p class="hero__subtitle">Qualifizierte Betreuung für Schüler der Johannes-Gutenberg-Realschule</p>
+        </div>
+    </section>
+
+    <!-- E-Mailverteiler für Anmeldeinformationen (Bleiben Sie informiert) -->
+    <section class="section section--dark" id="newsletter">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mailverteiler für Anmeldeinformationen</h2>
+            <p class="mb-4">Über die eingetragene E-Mail-Adresse werden Sie benachrichtigt, sobald das Anmeldeformular
+                für das Schuljahr 2026 freigeschaltet ist und Sie Ihr Kind anmelden können.</p>
+
+            <div id="newsletter-widget-container">
+                <form id="newsletter-form"
+                    style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <input type="text" id="newsletter-vorname" name="vorname" placeholder="Vorname" required
+                        class="form-input">
+                    <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
+                        class="form-input">
+                    <button type="submit" id="newsletter-submit" class="btn btn--primary"
+                        style="color: var(--color-primary); width: 100%;">
+                        ✉️ Jetzt eintragen
+                    </button>
+                    <div id="newsletter-message"
+                        style="display: none; padding: 10px; border-radius: var(--radius-md); margin-top: 10px;"></div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -153,12 +178,12 @@
     <!-- CTA -->
     <section class="section section--dark">
         <div class="container text-center">
-            <h2 style="color: white; margin-bottom: 1rem;">Jetzt online anmelden</h2>
+            <h2 style="color: white; margin-bottom: 1rem;">Anmeldung bald möglich</h2>
             <p style="opacity: 0.9; margin-bottom: 1.5rem;">
-                Besuchen Sie unsere Kontaktseite für die direkte Online-Anmeldung
-                für das kommende Schuljahr.
+                Wir arbeiten derzeit am Online-Anmeldeformular für das Schuljahr 2026.
+                Tragen Sie sich oben in den E-Mailverteiler ein, um den Start nicht zu verpassen!
             </p>
-            <a href="kontakt.html" class="btn btn--primary">🎯 Zur Online-Anmeldung</a>
+            <a href="kontakt.html#newsletter" class="btn btn--primary">🎯 Zur Online-Anmeldung</a>
         </div>
     </section>
 
