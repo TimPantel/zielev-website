@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitBtn = document.getElementById('newsletter-submit');
 
     // ⚠️ WICHTIG: Diese URL nach der Web-App-Bereitstellung ersetzen!
-    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwHTDS1xUsqehJe69mzVVU17fGWV7spZymeAnHe6NP7dS89az84P_i-Dg30swpigAqDPw/exec';
+    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwSHY67vtumGTsHBqAAEtvrmQ4wwKehddD9MltG46R-ZkCl2Imjwy0uDPZF0EUIIiNyzw/exec';
 
     if (form) {
         form.addEventListener('submit', async function (e) {
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.forEach((value, key) => { data[key] = value; });
 
         // ⚠️ WICHTIG: Die URL Ihrer Google Web App API
-        const API_URL = 'https://script.google.com/macros/s/AKfycbxZwgX3tdEl16Hrarvgl-WehNlUX29WrRRLdAZMwnWB2AHlJ4jy5h1jjEBGYHZppcAZKQ/exec'; // Beispiel
+        const API_URL = 'https://script.google.com/macros/s/AKfycbwSHY67vtumGTsHBqAAEtvrmQ4wwKehddD9MltG46R-ZkCl2Imjwy0uDPZF0EUIIiNyzw/exec'; // Beispiel
 
         try {
             // Wir nutzen 'no-cors' für die Google Apps Script Schnittstelle
