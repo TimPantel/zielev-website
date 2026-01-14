@@ -5,7 +5,7 @@ Willkommen auf der offiziellen Webseite des **Ziel e.V.** in Bergisch Gladbach-B
 Wir sind ein gemeinnütziger Verein, der sich der außerschulischen Betreuung und Förderung von Schülern widmet. Unser Schwerpunkt liegt auf der qualifizierten Hausaufgabenhilfe und der Unterstützung in einer familiären Lernumgebung.
 
 ## 🌐 Live-Webseite
-Unsere Webseite ist erreichbar unter: [www.zielev.de](https://www.zielev.de) (bzw. auf der GitHub Pages URL).
+Unsere Webseite ist erreichbar unter: [www.Zielev.com](https://www.Zielev.com)
 
 ## ✨ Features dieser Webseite
 - **Modernes Design:** Responsive Layout für Desktop und Mobilgeräte.

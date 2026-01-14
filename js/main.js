@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.forEach((value, key) => { data[key] = value; });
 
         // ⚠️ WICHTIG: Die URL Ihrer Google Web App API
-        const API_URL = 'https://script.google.com/macros/s/AKfycbwSHY67vtumGTsHBqAAEtvrmQ4wwKehddD9MltG46R-ZkCl2Imjwy0uDPZF0EUIIiNyzw/exec'; // Beispiel
+        const API_URL = 'https://script.google.com/macros/s/AKfycbwEUpDI3tKNW4woqAOCxWQKJE0FSW9gsoDzuN9giiKJtUpUJQb5iRYX7603xm7UzjZa/exec'; // Beispiel
 
         try {
             // Wir nutzen 'no-cors' für die Google Apps Script Schnittstelle
