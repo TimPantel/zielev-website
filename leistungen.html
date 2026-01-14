@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Ziel e.V. Leistungen - Hausaufgabenbetreuung, Übermittagsbetreuung und Förderung für Schüler in Bergisch Gladbach">
+    <meta name="keywords"
+        content="Ziel e.V. Leistungen - Hausaufgabenbetreuung, Übermittagsbetreuung, Mittagessen, Bergisch Gladbach">
     <title>Leistungen - Ziel e.V.</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -66,110 +66,156 @@
         </div>
     </section>
 
-    <!-- Hausaufgabenbetreuung -->
+    <!-- Leistungen Swibble Container -->
     <section class="section">
         <div class="container">
-            <h2 class="mb-4 text-center">📚 Hausaufgabenbetreuung</h2>
-
-            <div class="card-grid" style="grid-template-columns: 1.2fr 0.8fr;">
-                <div>
-                    <img src="assets/migration/Hausaufgabenhilfe Bild.avif" alt="Hausaufgabenhilfe"
-                        style="width: 100%; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg); height: 300px; object-fit: cover;">
-                    <p>
-                        Unsere qualifizierte Hausaufgabenbetreuung unterstützt Schüler bei der Erledigung
-                        ihrer täglichen Hausaufgaben. Wir fördern gezielt in den Hauptfächern und helfen
-                        bei Verständnisproblemen.
-                    </p>
-
-                    <h4 class="mb-2">Das bieten wir:</h4>
-                    <ul class="service-list">
-                        <li>Tägliche Hausaufgabenhilfe</li>
-                        <li>Förderung in den Hauptfächern (Deutsch, Mathematik, Englisch)</li>
-                        <li>Kleine Gruppen für individuelle Betreuung</li>
-                        <li>Qualifizierte Betreuer</li>
-                        <li>Ruhige Lernumgebung</li>
-                    </ul>
+            <div class="swibble">
+                <div class="swibble__nav">
+                    <button class="swibble__btn active" data-target="panel-hausaufgaben" data-hash="hausaufgaben">📚
+                        Hausaufgabenhilfe</button>
+                    <button class="swibble__btn" data-target="panel-mittagessen" data-hash="mittagessen">🍽️
+                        Mittagessen</button>
+                    <button class="swibble__btn" data-target="panel-uebermittag" data-hash="uebermittag">🤝
+                        Übermittagsbetreuung</button>
                 </div>
 
-                <div class="card">
-                    <h4 class="card__title">⏰ Betreuungszeiten</h4>
-                    <p><strong>Montag - Donnerstag:</strong><br>13:30 - 16:00 Uhr</p>
-                    <p><strong>Freitag:</strong><br>13:30 - 15:00 Uhr</p>
-                    <p class="mb-0" style="font-size: 0.9rem; color: var(--color-gray-500);">
-                        Zeiten können je nach Stundenplan variieren.
-                    </p>
+                <div class="swibble__content">
+                    <!-- Panel Hausaufgaben -->
+                    <div class="swibble__panel active" id="panel-hausaufgaben">
+                        <div class="service-card">
+                            <img src="assets/migration/Hausaufgabenhilfe Bild.avif" alt="Hausaufgabenhilfe"
+                                class="service-card__image">
+                            <div class="service-card__info">
+                                <h2>Hausaufgaben- & Förderbetreuung</h2>
+                                <p><strong>Fokus:</strong> "Eigenverantwortliches Lernen"</p>
+                                <p>Unser Konzept zielt darauf ab, Schüler der Klassen 5 & 6 der JGR dabei zu
+                                    unterstützen, ihre Hausaufgaben strukturiert und selbstständig zu erledigen. Wir
+                                    helfen beim Aufspüren von Defiziten in Hauptfächern und führen regelmäßige Gespräche
+                                    mit Schülern, Eltern und Lehrern.</p>
 
-                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--color-gray-200);">
+                                <ul class="service-list">
+                                    <li>Mo - Fr: 13:30 – 15:00 Uhr</li>
+                                    <li>Förderung in Kleingruppen</li>
+                                    <li>Enge Kooperation mit der Schule</li>
+                                </ul>
 
-                    <h4 class="card__title">📄 Flyer Download</h4>
-                    <a href="assets/migration/Hausaufgabenhilfe flyer.avif" class="btn btn--accent" style="width: 100%;"
-                        download>Flyer öffnen</a>
+                                <div class="info-box info-box--warning">
+                                    <p class="mb-0">⚠️ <strong>Hinweis:</strong> Die Hausaufgabenhilfe ist NICHT über
+                                        Teilhabe und Bildung abrechenbar.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Mittagessen -->
+                    <div class="swibble__panel" id="panel-mittagessen">
+                        <div class="service-card">
+                            <img src="assets/migration/Mittagessen Bild.avif" alt="Mittagessen"
+                                class="service-card__image">
+                            <div class="service-card__info">
+                                <h2>Frisch zubereitetes Mittagessen</h2>
+                                <p>Täglich servieren wir ein ausgewogenes Menü bestehend aus einem frischen Salat, einer
+                                    warmen Hauptmahlzeit und einem Dessert. Wasser und Tee stehen den Kindern jederzeit
+                                    zur Verfügung.</p>
+
+                                <div class="price-tag">4,50 € pro Mahlzeit</div>
+
+                                <h3>Abo-Preise (monatlich):</h3>
+                                <table class="abo-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tage / Woche</th>
+                                            <th>Preis</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1x wöchentlich</td>
+                                            <td>18,00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2x wöchentlich</td>
+                                            <td>36,00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3x wöchentlich</td>
+                                            <td>54,00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4x wöchentlich</td>
+                                            <td>72,00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5x wöchentlich</td>
+                                            <td>90,00 €</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="info-box info-box--success">
+                                    <p class="mb-0">✅ Eine Kostenübernahme über <strong>Bildung und Teilhabe</strong>
+                                        ist möglich.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Übermittagsbetreuung -->
+                    <div class="swibble__panel" id="panel-uebermittag">
+                        <div class="service-card">
+                            <img src="assets/migration/Übermittagsbetreuung_neu.png" alt="Übermittagsbetreuung"
+                                class="service-card__image">
+                            <div class="service-card__info">
+                                <h2>Übermittagsbetreuung (Uemi)</h2>
+                                <p>In unserer kostenlosen Übermittagsbetreuung bieten wir den Kindern einen sicheren
+                                    Raum zum Ankommen und Entspannen nach dem Unterricht.</p>
+
+                                <ul class="service-list">
+                                    <li>Mo - Fr: 12:30 – 15:00 Uhr</li>
+                                    <li>Aufsicht während des Mittagessens</li>
+                                    <li>Freizeitangebote: Kickern, Ballspiele, Kicker</li>
+                                    <li>Kreativbereich: Basteln, Malen, Lesen</li>
+                                    <li>Möglichkeit zur selbständigen Erledigung der Hausaufgaben</li>
+                                </ul>
+
+                                <p>Die Uemi ist der perfekte Ort, um in Gemeinschaft Zeit zu verbringen, bevor es nach
+                                    Hause oder in die Hausaufgabenbetreuung geht.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Übermittagsbetreuung -->
+    <!-- Preise Summary -->
     <section class="section section--alt">
-        <div class="container">
-            <h2 class="mb-4 text-center">🍽️ Übermittagsbetreuung & Mittagessen</h2>
-
-            <div class="card-grid" style="grid-template-columns: 0.8fr 1.2fr;">
-                <div class="card" style="height: fit-content;">
-                    <h4 class="card__title">🍴 Mittagessen-Abo</h4>
-                    <img src="assets/migration/Mittagessen Bild.avif" alt="Mittagessen"
-                        style="width: 100%; border-radius: var(--radius-md); margin-bottom: 1rem; height: 150px; object-fit: cover;">
-                    <p>
-                        Wir bieten ein optionales Mittagessen-Abo an.
-                        Die Kosten werden separat abgerechnet.
-                    </p>
-                    <img src="assets/migration/Mitagessen Abo QR.avif" alt="QR Code Mittagessen"
-                        style="width: 150px; margin: 1rem auto; display: block;">
-                    <p class="text-center" style="font-size: 0.9rem; color: var(--color-gray-500);">
-                        QR-Code für das Abo-Portal
-                    </p>
-                    <a href="assets/migration/Mittagessen Flyer.avif" class="btn btn--secondary"
-                        style="width: 100%; color: var(--color-primary); border-color: var(--color-primary);"
-                        download>Speiseplan/Flyer</a>
-                </div>
-
-                <div>
-                    <img src="assets/migration/Übermittagsbetreuung Bild.avif" alt="Übermittagsbetreuung"
-                        style="width: 100%; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg); height: 250px; object-fit: cover;">
-                    <p>
-                        Für Schüler, die auch über Mittag betreut werden möchten, bieten wir
-                        die Übermittagsbetreuung inklusive Mittagessen an.
-                    </p>
-
-                    <h4 class="mb-2">Leistungen:</h4>
-                    <ul class="service-list">
-                        <li>Betreuung ab Schulschluss</li>
-                        <li>Warmes Mittagessen (optional als Abo)</li>
-                        <li>Freizeitgestaltung vor den Hausaufgaben</li>
-                        <li>Gemeinsames Mittagessen in der Gruppe</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Preise -->
-    <section class="section">
         <div class="container text-center">
-            <h2 class="mb-4">💰 Monatlicher Beitrag</h2>
-
-            <div class="price-box" style="max-width: 400px; margin: 0 auto;">
-                <p style="margin-bottom: 0.5rem; opacity: 0.8;">Elternbeitrag</p>
-                <div class="price-box__amount">ca. 75 €</div>
-                <p class="price-box__period">pro Monat</p>
+            <h2 class="mb-4">Beiträge & Konditionen</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Hausaufgabenhilfe</h4>
+                    <div class="price-box__amount" style="font-size: 2rem; color: var(--color-primary);">ca. 75 €</div>
+                    <p>pro Monat</p>
+                </div>
+                <div class="card">
+                    <h4>Übermittagsbetreuung</h4>
+                    <div class="price-box__amount" style="font-size: 2rem; color: var(--color-success);">Kostenlos</div>
+                    <p>für JGR-Schüler</p>
+                </div>
+                <div class="card">
+                    <h4>Mittagessen</h4>
+                    <div class="price-box__amount" style="font-size: 2rem; color: var(--color-accent);">4,50 €</div>
+                    <p>pro Mahlzeit</p>
+                </div>
             </div>
 
-            <div class="info-box" style="max-width: 600px; margin: 2rem auto; text-align: left;">
-                <div class="info-box__title">ℹ️ Wichtige Hinweise</div>
+            <div class="info-box" style="max-width: 600px; margin: 3rem auto; text-align: left;">
+                <div class="info-box__title">ℹ️ Wichtige Rahmenbedingungen</div>
                 <ul style="margin-bottom: 0;">
-                    <li><strong>Kündigungsfrist:</strong> 3 Monate zum Monatsende</li>
-                    <li><strong>Jobcenter-Förderung:</strong> Bei Bezug von Leistungen möglich</li>
-                    <li><strong>Geschwisterrabatt:</strong> Bitte bei der Anmeldung anfragen</li>
+                    <li><strong>Kündigungsfrist:</strong> 3 Monate zum Monatsende.</li>
+                    <li><strong>Anmeldung:</strong> Startet am 01.04.2026 ausschließlich online.</li>
+                    <li><strong>Vereinszweck:</strong> Gemeinnützige Unterstützung der Schüler.</li>
                 </ul>
             </div>
         </div>
@@ -178,12 +224,12 @@
     <!-- CTA -->
     <section class="section section--dark">
         <div class="container text-center">
-            <h2 style="color: white; margin-bottom: 1rem;">Anmeldung bald möglich</h2>
+            <h2 style="color: white; margin-bottom: 1rem;">Interessiert?</h2>
             <p style="opacity: 0.9; margin-bottom: 1.5rem;">
-                Wir arbeiten derzeit am Online-Anmeldeformular für das Schuljahr 2026.
-                Tragen Sie sich oben in den E-Mailverteiler ein, um den Start nicht zu verpassen!
+                Die Anmeldung für das Schuljahr 2026/27 wird am 01.04.2026 freigeschaltet.
+                Tragen Sie sich jetzt in unseren E-Mailverteiler ein!
             </p>
-            <a href="kontakt.html#newsletter" class="btn btn--primary">🎯 Zur Online-Anmeldung</a>
+            <a href="kontakt.html#newsletter" class="btn btn--primary">🎯 Zum E-Mailverteiler</a>
         </div>
     </section>
 

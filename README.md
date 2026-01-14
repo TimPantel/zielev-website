@@ -1,4 +1,4 @@
-# 🎯 Ziel e.V. - Hausaufgabenbetreuung & OGS
+# 🎯 Ziel e.V. - Hausaufgabenbetreuung & Übermittagsbetreuung
 
 Willkommen auf der offiziellen Webseite des **Ziel e.V.** in Bergisch Gladbach-Bensberg. 
 
@@ -9,7 +9,7 @@ Unsere Webseite ist erreichbar unter: [www.zielev.de](https://www.zielev.de) (bz
 
 ## ✨ Features dieser Webseite
 - **Modernes Design:** Responsive Layout für Desktop und Mobilgeräte.
-- **Online-Anmeldung:** Ein benutzerfreundliches, mehrstufiges Formular für die OGS-Anmeldung.
+- **Online-Anmeldung:** Ein benutzerfreundliches, mehrstufiges Formular für die Anmeldung zur Betreuung.
 - **Transparenz:** Alle Informationen zu Leistungen, Team und Kosten auf einen Blick.
 
 ## 🛠️ Technische Details

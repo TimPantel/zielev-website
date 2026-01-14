@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Multi-Step Enrollment Form Logic
 // ============================================================
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('ogs-enrollment-form');
+    const form = document.getElementById('enrollment-form');
     if (!form) return;
 
     const steps = document.querySelectorAll('.form-step');
@@ -311,5 +311,45 @@ document.addEventListener('DOMContentLoaded', function () {
         // Simple modulo 97 check could be added here for full security,
         // but regex DE + 20 digits is a good start for UI feedback.
         return true;
+    }
+});
+// ============================================================
+// Swibble - Service Tabs Logic
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const swibbleBtns = document.querySelectorAll('.swibble__btn');
+    const swibblePanels = document.querySelectorAll('.swibble__panel');
+
+    if (swibbleBtns.length > 0) {
+        swibbleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.target;
+
+                // Remove active class from all buttons and panels
+                swibbleBtns.forEach(b => b.classList.remove('active'));
+                swibblePanels.forEach(p => p.classList.remove('active'));
+
+                // Add active class to current selection
+                btn.classList.add('active');
+                const panel = document.getElementById(target);
+                if (panel) {
+                    panel.classList.add('active');
+                }
+            });
+        });
+
+        // Handle hash navigation (e.g. from dropdown)
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            const btn = document.querySelector(`.swibble__btn[data-hash="${hash}"]`);
+            if (btn) {
+                btn.click();
+                // Smooth scroll to the swibble section
+                const swibbleSection = document.querySelector('.swibble');
+                if (swibbleSection) {
+                    swibbleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
     }
 });

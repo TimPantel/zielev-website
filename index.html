@@ -7,7 +7,7 @@
     <meta name="description"
         content="Ziel e.V. - Gemeinnütziger Verein zur außerschulischen Betreuung von Schülern in Bergisch Gladbach. Qualifizierte Hausaufgabenhilfe und Förderung.">
     <meta name="keywords"
-        content="Ziel e.V., Hausaufgabenbetreuung, OGS, Bergisch Gladbach, Bensberg, Nachhilfe, Schülerbetreuung">
+        content="Ziel e.V., Hausaufgabenbetreuung, Bergisch Gladbach, Bensberg, Nachhilfe, Schülerbetreuung">
     <title>Ziel e.V. - Hausaufgabenbetreuung in Bergisch Gladbach</title>
 
     <!-- Favicon -->
@@ -28,14 +28,19 @@
 
             <nav class="nav">
                 <button class="nav__toggle" aria-label="Menü öffnen" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
 
                 <ul class="nav__list" id="nav-menu">
                     <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
-                    <li><a href="leistungen.html" class="nav__link">Leistungen</a></li>
+                    <li class="nav__dropdown">
+                        <a href="leistungen.html" class="nav__link">Leistungen</a>
+                        <ul class="nav__submenu">
+                            <li><a href="leistungen.html#hausaufgaben" class="nav__link">Hausaufgabenbetreuung</a></li>
+                            <li><a href="leistungen.html#mittagessen" class="nav__link">Mittagessen</a></li>
+                            <li><a href="leistungen.html#uebermittag" class="nav__link">Übermittagsbetreuung</a></li>
+                        </ul>
+                    </li>
                     <li><a href="team.html" class="nav__link">Team</a></li>
                     <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
                 </ul>
@@ -95,7 +100,8 @@
                 </div>
                 <p class="mb-0">
                     <strong>Anmeldung für das Schuljahr 2026/2027:</strong>
-                    Bitte melden Sie sich bis zum <strong>01.06.2026</strong> an.
+                    Bitte melden Sie sich bis zum <strong>01.06.2026</strong> an. Die Anmeldungen starten am
+                    <strong>01.04.2026</strong> und werden dann freigeschaltet.
                     Spätere Anmeldungen werden auf die Warteliste gesetzt.
                     <strong>Der Ziel e.V. wird digital!</strong> Wir arbeiten derzeit an unserem neuen
                     bequemen <strong>Online-Anmeldeformular</strong>. Bitte tragen Sie sich oben in den E-Mailverteiler

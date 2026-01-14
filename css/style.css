@@ -890,3 +890,174 @@ ul, ol {
   color: var(--color-warning);
   margin-bottom: var(--spacing-md);
 }
+
+/* ============================================================
+   Navigation Dropdown
+   ============================================================ */
+.nav__dropdown {
+  position: relative;
+}
+
+.nav__submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-white);
+  min-width: 220px;
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+  z-index: 100;
+}
+
+.nav__dropdown:hover .nav__submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav__submenu li a {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  color: var(--color-gray-700);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.nav__submenu li a:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-primary);
+}
+
+/* Mobile Dropdown adjustment */
+@media (max-width: 768px) {
+  .nav__submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    padding-left: var(--spacing-lg);
+    background-color: transparent;
+    display: none;
+  }
+  
+  .nav__dropdown:hover .nav__submenu {
+    display: block;
+  }
+}
+
+/* ============================================================
+   Swibble (Service Tabs/Carousel)
+   ============================================================ */
+.swibble {
+  margin: var(--spacing-3xl) 0;
+}
+
+.swibble__nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.swibble__btn {
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.swibble__btn:hover,
+.swibble__btn.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.swibble__content {
+  position: relative;
+  min-height: 500px;
+}
+
+.swibble__panel {
+  display: none;
+  animation: slideIn 0.5s ease;
+}
+
+.swibble__panel.active {
+  display: block;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.service-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-xl);
+}
+
+@media (max-width: 992px) {
+  .service-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card__image {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.price-tag {
+  display: inline-block;
+  background: var(--color-gray-100);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.abo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+}
+
+.abo-table td, .abo-table th {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-gray-200);
+  text-align: left;
+}
+
+.abo-table th {
+  color: var(--color-gray-500);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
