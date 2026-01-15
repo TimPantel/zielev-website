@@ -68,7 +68,7 @@
     <!-- E-Mailverteiler für Anmeldeinformationen (Bleiben Sie informiert) -->
     <section class="section section--dark" id="newsletter">
         <div class="container text-center">
-            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mail-Verteiler für Anmeldeinformationen</h2>
+            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mailverteiler für Anmeldeinformationen</h2>
             <p class="mb-4">Über die eingetragene E-Mail-Adresse werden Sie benachrichtigt, sobald das Anmeldeformular
                 für das Schuljahr 2026 freigeschaltet ist und Sie Ihr Kind anmelden können.</p>
 
@@ -79,6 +79,17 @@
                         class="form-input">
                     <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
                         class="form-input">
+                    <div class="custom-control"
+                        style="text-align: left; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="newsletter-dsgvo" name="newsletter_dsgvo" required
+                            style="width: 18px; height: 18px; margin-top: 3px; flex-shrink: 0;">
+                        <label for="newsletter-dsgvo" style="font-size: 0.85rem; color: rgba(255,255,255,0.9);">
+                            Ich habe die <a href="datenschutz.html" target="_blank"
+                                style="color: var(--color-accent);">Datenschutzerklärung</a>
+                            gelesen und bin mit der Verarbeitung meiner Daten zum Zweck der Benachrichtigung
+                            einverstanden. *
+                        </label>
+                    </div>
                     <button type="submit" id="newsletter-submit" class="btn btn--primary"
                         style="color: var(--color-primary); width: 100%;">
                         ✉️ Jetzt eintragen
@@ -100,9 +111,9 @@
                 </div>
                 <p class="mb-0">
                     <strong>Anmeldung für das Schuljahr 2026/2027:</strong>
-                    Bitte melden Sie sich bis zum <strong>01.06.2026</strong> an. Das Anmeldeverfahren startet am
-                    <strong>01.04.2026</strong> und wird dann freigeschaltet.
-                    Anmeldungen, die nach dem 01.06.2026 eingehen werden auf der Warteliste vorgemerkt.
+                    Bitte melden Sie sich bis zum <strong>01.06.2026</strong> an. Die Anmeldungen starten am
+                    <strong>01.04.2026</strong> und werden dann freigeschaltet.
+                    Spätere Anmeldungen werden auf die Warteliste gesetzt.
                     <strong>Der Ziel e.V. wird digital!</strong> Wir arbeiten derzeit an unserem neuen
                     bequemen <strong>Online-Anmeldeformular</strong>. Bitte tragen Sie sich oben in den E-Mailverteiler
                     ein,
@@ -260,9 +271,6 @@
 
                 <div>
                     <h4 class="footer__title">Kontakt</h4>
-                    <p>Vertreten durch:</p>
-                    <p>Michelle Pantel</p>
-                    <p>Angelika Becker</p>
                     <p>
                         Schlehecken 5a<br>
                         51429 Bergisch Gladbach<br>
