@@ -43,7 +43,7 @@
     <!-- E-Mailverteiler für Anmeldeinformationen (Bleiben Sie informiert) -->
     <section class="section section--dark" id="newsletter">
         <div class="container text-center">
-            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mail-Verteiler für Anmeldeinformationen</h2>
+            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mailverteiler für Anmeldeinformationen</h2>
             <p class="mb-4">Über die eingetragene E-Mail-Adresse werden Sie benachrichtigt, sobald das Anmeldeformular
                 für das Schuljahr 2026 freigeschaltet ist und Sie Ihr Kind anmelden können.</p>
 
@@ -54,6 +54,17 @@
                         class="form-input">
                     <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
                         class="form-input">
+                    <div class="custom-control"
+                        style="text-align: left; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="newsletter-dsgvo" name="newsletter_dsgvo" required
+                            style="width: 18px; height: 18px; margin-top: 3px; flex-shrink: 0;">
+                        <label for="newsletter-dsgvo" style="font-size: 0.85rem; color: rgba(255,255,255,0.9);">
+                            Ich habe die <a href="datenschutz.html" target="_blank"
+                                style="color: var(--color-accent);">Datenschutzerklärung</a>
+                            gelesen und bin mit der Verarbeitung meiner Daten zum Zweck der Benachrichtigung
+                            einverstanden. *
+                        </label>
+                    </div>
                     <button type="submit" id="newsletter-submit" class="btn btn--primary"
                         style="color: var(--color-primary); width: 100%;">
                         ✉️ Jetzt eintragen
@@ -75,11 +86,9 @@
                         Unser Team hilft Ihnen jederzeit gerne weiter - nehmen Sie einfach Kontakt zu uns auf!
                     </p>
                     <div class="contact-box" style="text-align: left;">
-                        <p class="mb-2"><strong>📧 E-Mail:</strong> <a
-                                href="mailto:info.zielev@gmail.com">info.zielev@gmail.com</a>
+                        <p class="mb-2"><strong>📧 E-Mail:</strong> <a href="mailto:Ziel.ev@web.de">Ziel.ev@web.de</a>
                         </p>
-                        <p class="mb-0"><strong>📍 Standort:</strong> Geschäftsführung: Michelle Pantel <br> Schlehecken
-                            5a, 51429 Bergisch Gladbach</p>
+                        <p class="mb-0"><strong>📍 Standort:</strong> Schlehecken 5a, 51429 Bergisch Gladbach</p>
                     </div>
                 </div>
                 <div class="card" style="padding: 0; overflow: hidden; border-radius: var(--radius-xl);">
@@ -444,6 +453,19 @@
                             </label>
                         </div>
 
+                        <div class="custom-control mb-3"
+                            style="background: rgba(255, 193, 7, 0.1); padding: 12px; border-radius: var(--radius-md); border-left: 3px solid #ffc107;">
+                            <input type="checkbox" name="health_data_consent" id="health-data-check" required>
+                            <label for="health-data-check" style="font-size: 0.9rem;">
+                                <strong>Einwilligung zur Verarbeitung von Gesundheitsdaten (Art. 9 DSGVO) *</strong><br>
+                                <small>Ich willige ausdrücklich ein, dass die oben angegebenen Gesundheitsdaten meines
+                                    Kindes
+                                    (Allergien, Erkrankungen, ADHS/ADS, LRS) zum Zweck der Betreuung und
+                                    Notfallversorgung
+                                    verarbeitet werden. Diese Einwilligung kann ich jederzeit widerrufen.</small>
+                            </label>
+                        </div>
+
                         <div class="custom-control mb-3">
                             <input type="checkbox" name="legal_accept" id="legal-check" required>
                             <label for="legal-check" style="font-size: 0.9rem;">
@@ -514,11 +536,8 @@
                 </div>
                 <div>
                     <h4 class="footer__title">Kontakt</h4>
-                    <p>Vertreten durch:</p>
-                    <p>Michelle Pantel</p>
-                    <p>Angelika Becker</p>
                     <p>Schlehecken 5a<br>51429 Bergisch Gladbach<br>
-                        <a href="mailto:info.zielev@gmail.com">info.zielev@gmail.com</a>
+                        <a href="mailto:ziel.ev@web.de">ziel.ev@web.de</a>
                     </p>
                 </div>
             </div>
