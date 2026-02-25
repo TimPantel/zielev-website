@@ -266,6 +266,23 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
+        // Final validation check for all steps before submission
+        let isFormValid = true;
+        for (let i = 1; i <= steps.length; i++) {
+            if (!validateStep(i)) {
+                isFormValid = false;
+                // If invalid, go back to the first invalid step
+                currentStep = i;
+                updateForm();
+                alert('Bitte überprüfen Sie Ihre Eingaben. Einige Pflichtfelder (z.B. E-Mail) sind nicht korrekt ausgefüllt.');
+                break; // Stop checking further steps once we found an invalid one
+            }
+        }
+
+        if (!isFormValid) {
+            return; // Stop submission
+        }
+
         // Final UI feedback
         btnSubmit.disabled = true;
         btnSubmit.textContent = '⏳ Wird übermittelt...';
@@ -286,16 +303,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: new URLSearchParams(data).toString()
             });
 
+            // Da mode: 'no-cors' verwendet wird, können wir die Antwort des Servers nicht lesen.
+            // fetch() wirft bei no-cors KEINEN Fehler für HTTP 4xx oder 5xx Statuscodes,
+            // sondern nur bei echten Netzwerkfehlern (z.B. kein Internet).
+            // Daher gehen wir bei erfolgreichem fetch() davon aus, dass die Anfrage gesendet wurde.
+
             // Success UI
             form.style.display = 'none';
-            document.querySelector('.progress-container').style.display = 'none';
-            document.querySelector('.form-header p').textContent = 'Anmeldung abgeschlossen';
-            displayEmail.textContent = data.email;
+            const progressContainer = document.querySelector('.progress-bar-container');
+            if (progressContainer) progressContainer.style.display = 'none';
+
+            const formHeaderP = document.querySelector('.form-header p');
+            if (formHeaderP) formHeaderP.textContent = 'Anmeldung abgeschlossen';
+
+            displayEmail.textContent = data.email || 'Ihre E-Mail-Adresse';
             successScreen.style.display = 'block';
 
         } catch (error) {
             console.error('Submission Error:', error);
-            alert('Es ist ein Fehler aufgetreten. Bitte prüfen Sie Ihre Internetverbindung oder kontaktieren Sie uns per E-Mail.');
+            alert('Es ist ein Netzwerkfehler aufgetreten. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.');
             btnSubmit.disabled = false;
             btnSubmit.textContent = 'Kostenpflichtig anmelden';
         }
@@ -357,14 +383,14 @@ document.addEventListener('DOMContentLoaded', function () {
 // ============================================================
 // FAQ Accordion Logic
 // ============================================================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
-            
+
             // Toggle current item
             item.classList.toggle('active');
         });
@@ -374,13 +400,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================================
 // Access Code Logic for Early Registration
 // ============================================================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const accessCodeBtn = document.getElementById('btn-access-code');
     const accessCodeInput = document.getElementById('access-code');
     const accessCodeMessage = document.getElementById('access-code-message');
-    
+
     if (accessCodeBtn && accessCodeInput) {
-        accessCodeBtn.addEventListener('click', function() {
+        accessCodeBtn.addEventListener('click', function () {
             const code = accessCodeInput.value.trim().toLowerCase();
             if (code === 'zielev') {
                 // Show success message
@@ -389,7 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 accessCodeMessage.style.background = 'rgba(76, 175, 80, 0.2)';
                 accessCodeMessage.style.color = '#fff';
                 accessCodeMessage.style.border = '1px solid rgba(76, 175, 80, 0.5)';
-                
+
                 // Unlock the form
                 const enrollmentForm = document.querySelector('.enrollment-form');
                 if (enrollmentForm) {
@@ -403,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             overlay.style.display = 'none';
                         }, 500);
                     }
-                    
+
                     // Small delay to let user read the message, then scroll to form
                     setTimeout(() => {
                         enrollmentForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -415,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 accessCodeMessage.style.background = 'rgba(244, 67, 54, 0.2)';
                 accessCodeMessage.style.color = '#fff';
                 accessCodeMessage.style.border = '1px solid rgba(244, 67, 54, 0.5)';
-                
+
                 // Keep the form disabled
                 const enrollmentForm = document.querySelector('.enrollment-form');
                 if (enrollmentForm) {
@@ -428,9 +454,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-        
+
         // Also trigger on Enter key
-        accessCodeInput.addEventListener('keypress', function(e) {
+        accessCodeInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 accessCodeBtn.click();
