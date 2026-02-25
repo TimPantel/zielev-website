@@ -365,13 +365,76 @@ document.addEventListener('DOMContentLoaded', function() {
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             
-            // Close all other items (optional, but cleaner)
-            // faqItems.forEach(otherItem => {
-            //     otherItem.classList.remove('active');
-            // });
-            
             // Toggle current item
             item.classList.toggle('active');
         });
     });
+});
+
+// ============================================================
+// Access Code Logic for Early Registration
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const accessCodeBtn = document.getElementById('btn-access-code');
+    const accessCodeInput = document.getElementById('access-code');
+    const accessCodeMessage = document.getElementById('access-code-message');
+    
+    if (accessCodeBtn && accessCodeInput) {
+        accessCodeBtn.addEventListener('click', function() {
+            const code = accessCodeInput.value.trim().toLowerCase();
+            if (code === 'zielev') {
+                // Show success message
+                accessCodeMessage.style.display = 'block';
+                accessCodeMessage.textContent = '✅ Zugang gewährt! Das Anmeldeformular ist nun freigeschaltet.';
+                accessCodeMessage.style.background = 'rgba(76, 175, 80, 0.2)';
+                accessCodeMessage.style.color = '#fff';
+                accessCodeMessage.style.border = '1px solid rgba(76, 175, 80, 0.5)';
+                
+                // Unlock the form
+                const enrollmentForm = document.querySelector('.enrollment-form');
+                if (enrollmentForm) {
+                    enrollmentForm.classList.remove('enrollment-form--disabled');
+                    const overlay = enrollmentForm.querySelector('.enrollment-form__overlay');
+                    if (overlay) {
+                        // Fade out overlay
+                        overlay.style.transition = 'opacity 0.5s ease';
+                        overlay.style.opacity = '0';
+                        setTimeout(() => {
+                            overlay.style.display = 'none';
+                        }, 500);
+                    }
+                    
+                    // Small delay to let user read the message, then scroll to form
+                    setTimeout(() => {
+                        enrollmentForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 800);
+                }
+            } else {
+                accessCodeMessage.style.display = 'block';
+                accessCodeMessage.textContent = '❌ Ungültiger Zugangscode.';
+                accessCodeMessage.style.background = 'rgba(244, 67, 54, 0.2)';
+                accessCodeMessage.style.color = '#fff';
+                accessCodeMessage.style.border = '1px solid rgba(244, 67, 54, 0.5)';
+                
+                // Keep the form disabled
+                const enrollmentForm = document.querySelector('.enrollment-form');
+                if (enrollmentForm) {
+                    enrollmentForm.classList.add('enrollment-form--disabled');
+                    const overlay = enrollmentForm.querySelector('.enrollment-form__overlay');
+                    if (overlay) {
+                        overlay.style.display = 'flex';
+                        overlay.style.opacity = '1';
+                    }
+                }
+            }
+        });
+        
+        // Also trigger on Enter key
+        accessCodeInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                accessCodeBtn.click();
+            }
+        });
+    }
 });
