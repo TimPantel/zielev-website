@@ -28,7 +28,7 @@
                     <li><a href="faq.html" class="nav__link">FAQ</a></li>
                     <li><a href="kontakt.html" class="nav__link nav__link--active">Kontakt</a></li>
                 </ul>
-                <a href="kontakt.html#newsletter" class="nav__cta">Jetzt anmelden</a>
+                <a href="kontakt.html#anmeldung" class="nav__cta">Jetzt anmelden</a>
             </nav>
         </div>
     </header>
@@ -37,60 +37,7 @@
     <section class="hero" style="padding: 3rem 0;">
         <div class="hero__content">
             <h1 class="hero__title">Kontakt & Anmeldung</h1>
-            <p class="hero__subtitle">Nutzen Sie unseren E-Mail-Verteiler für Informationen zur Anmeldung 2026</p>
-        </div>
-    </section>
-
-    <!-- E-Mail-Verteiler für Anmeldeinformationen (Bleiben Sie informiert) -->
-    <section class="section section--dark" id="newsletter">
-        <div class="container text-center">
-            <h2 style="color: white; margin-bottom: var(--spacing-md);">E-Mail-Verteiler für Anmeldeinformationen</h2>
-            <p class="mb-4">Über die eingetragene E-Mail-Adresse werden Sie benachrichtigt, sobald das Anmeldeformular
-                für das Schuljahr 2026 freigeschaltet ist und Sie Ihr Kind anmelden können.</p>
-
-            <div id="newsletter-widget-container">
-                <form id="newsletter-form"
-                    style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-md);">
-                    <input type="text" id="newsletter-vorname" name="vorname" placeholder="Vorname" required
-                        class="form-input">
-                    <input type="email" id="newsletter-email" name="email" placeholder="E-Mail-Adresse" required
-                        class="form-input">
-                    <div class="custom-control"
-                        style="text-align: left; display: flex; align-items: flex-start; gap: 10px;">
-                        <input type="checkbox" id="newsletter-dsgvo" name="newsletter_dsgvo" required
-                            style="width: 18px; height: 18px; margin-top: 3px; flex-shrink: 0;">
-                        <label for="newsletter-dsgvo" style="font-size: 0.85rem; color: rgba(255,255,255,0.9);">
-                            Ich habe die <a href="datenschutz.html" target="_blank"
-                                style="color: var(--color-accent);">Datenschutzerklärung</a>
-                            gelesen und bin mit der Verarbeitung meiner Daten zum Zweck der Benachrichtigung
-                            einverstanden. *
-                        </label>
-                    </div>
-                    <button type="submit" id="newsletter-submit" class="btn btn--primary"
-                        style="color: var(--color-primary); width: 100%;">
-                        ✉️ Jetzt eintragen
-                    </button>
-                    <div id="newsletter-message"
-                        style="display: none; padding: 10px; border-radius: var(--radius-md); margin-top: 10px;"></div>
-
-                    <hr style="margin: 15px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.2);">
-
-                    <div style="text-align: left; margin-top: 5px;">
-                        <label for="access-code"
-                            style="font-size: 0.85rem; color: rgba(255,255,255,0.9); margin-bottom: 5px; display: block;">Zugangscode
-                            durch Voranmeldung</label>
-                        <div style="display: flex; gap: 10px;">
-                            <input type="text" id="access-code" class="form-input" placeholder="Code eingeben"
-                                style="flex: 1;">
-                            <button type="button" id="btn-access-code" class="btn btn--secondary"
-                                style="padding: 10px 15px; border: none;">Einlösen</button>
-                        </div>
-                        <div id="access-code-message"
-                            style="display: none; font-size: 0.85rem; margin-top: 5px; padding: 5px; border-radius: 4px;">
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <p class="hero__subtitle">Wir freuen uns auf Ihre Kontaktaufnahme oder Anmeldung für das Schuljahr 2026</p>
         </div>
     </section>
 
@@ -119,20 +66,11 @@
     </section>
 
     <!-- Enrollment Section -->
-    <section class="section section--alt">
+    <section class="section section--alt" id="anmeldung">
         <div class="container">
             <h2 class="text-center mb-4">📝 Online-Anmeldung 2026/2027</h2>
-            <div class="enrollment-form enrollment-form--disabled">
-                <!-- Overlay Notice -->
-                <div class="enrollment-form__overlay">
-                    <div class="overlay-notice">
-                        <h3>🚧 In Bearbeitung</h3>
-                        <p>Das Anmeldeformular befindet sich derzeit noch in Bearbeitung. Bitte tragen Sie sich oben in
-                            unseren <strong>E-Mail-Verteiler für Anmeldeinformationen</strong> ein, um benachrichtigt zu
-                            werden, sobald die Anmeldung möglich ist.</p>
-                        <a href="#newsletter" class="btn btn--accent">Zum E-Mail-Verteiler</a>
-                    </div>
-                </div>
+            <div class="enrollment-form">
+
                 <!-- Form Header -->
                 <div class="form-header">
                     <h2>🎯 Online-Anmeldung</h2>
@@ -175,10 +113,6 @@
                                 <label class="form-label">Geburtsdatum *</label>
                                 <input type="date" name="child_birthday" class="form-input" required>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Nationalität *</label>
-                                <input type="text" name="child_nationality" class="form-input" required>
-                            </div>
                         </div>
 
                         <div class="card-grid" style="grid-template-columns: 2fr 1fr; gap: var(--spacing-md);">
@@ -196,11 +130,6 @@
                             <div class="form-group">
                                 <label class="form-label">Ort *</label>
                                 <input type="text" name="city" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Klasse (ab 26/27) *</label>
-                                <input type="text" name="school_class" class="form-input" placeholder="z.B. 5a"
-                                    required>
                             </div>
                         </div>
 
@@ -293,24 +222,12 @@
                                         placeholder="z.B. Dienstag ab 14 Uhr">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Geh-Erlaubnis nach Erledigung vor 15:00 Uhr?</label>
+                                    <label class="form-label">Mein Kind darf nach Erledigung der Hausaufgaben vor
+                                        15:00 Uhr gehen!</label>
                                     <select name="homework_leave_early" class="form-input">
                                         <option value="Nein">Nein</option>
                                         <option value="Ja">Ja</option>
                                     </select>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Falls Nein: Betreuung bis...</label>
-                                    <select name="homework_stay_until" class="form-input">
-                                        <option value="15:00">15:00 Uhr</option>
-                                        <option value="15:30">15:30 Uhr</option>
-                                    </select>
-                                </div>
-                                <div class="custom-control flex items-center">
-                                    <input type="checkbox" name="homework_consent_sheets" id="homework-sheets"
-                                        style="width: 16px; height: 16px; margin-right: 10px;">
-                                    <label for="homework-sheets"><small>Zustimmung zu bedarfsorientierten Förderaufgaben
-                                            (z.B. Übungsblätter)</small></label>
                                 </div>
                             </div>
                         </div>
@@ -345,14 +262,7 @@
                                 <input type="checkbox" name="module_afternoon" id="check-afternoon"
                                     style="width: 20px; height: 20px; margin-right: 10px;">
                                 <label for="check-afternoon"><strong>Übermittagsbetreuung (ÜMB)</strong></label>
-                            </div>
-                            <div id="details-afternoon"
-                                style="padding-left: 30px; border-left: 2px solid var(--color-accent); margin-top: 10px;">
-                                <div class="custom-control flex items-center">
-                                    <input type="checkbox" name="afternoon_inclusion" id="inclusion-child"
-                                        style="width: 16px; height: 16px; margin-right: 10px;">
-                                    <label for="inclusion-child">Status als Inklusionskind</label>
-                                </div>
+                                <p>(Nur Ankreuzen, wenn keine Hausaufgabenhilfe gebucht wird)</p>
                             </div>
                         </div>
                     </div>
@@ -375,14 +285,14 @@
 
                         <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                             <div class="form-group">
-                                <label class="form-label">ADHS/ADS bekannt?</label>
+                                <label class="form-label">ADHS/ADS bekannt? (Freiwillige Angabe)</label>
                                 <select name="health_adhs" class="form-input">
                                     <option value="Nein">Nein</option>
                                     <option value="Ja">Ja</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">LRS bekannt?</label>
+                                <label class="form-label">LRS bekannt? (Freiwillige Angabe)</label>
                                 <select name="health_lrs" class="form-input">
                                     <option value="Nein">Nein</option>
                                     <option value="Ja">Ja</option>
@@ -391,9 +301,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Zusätzliche Notfall-Telefonnummer (Name + Nummer) *</label>
+                            <label class="form-label">Zusätzliche Notfall-Telefonnummer (Name + Nummer)</label>
                             <input type="text" name="emergency_contact" class="form-input"
-                                placeholder="z.B. Oma Müller: 0123/456789" required>
+                                placeholder="z.B. Oma Müller: 0123/456789">
                         </div>
                     </div>
 
@@ -456,7 +366,11 @@
 
                         <div class="card mb-4 bg-light">
                             <ul style="font-size: 0.9rem; margin-bottom: 0;">
-                                <li>Kündigungsfrist: 3 Monate zum Monatsende.</li>
+                                <li>Kündigungsfrist: Immer zum Schuljahr/Halbjahr möglich.</li>
+                                <li>Die Kündigungsfrist beträgt 4 Wochen zum 30. Juni oder zum 31. Dezember des Jahres
+                                    und
+                                    muss per E-Mail an info.zielev@gmail.com mit dem Widerruf der Einzugsermächtigung
+                                    erfolgen.</li>
                                 <li>Abmeldung muss schriftlich erfolgen.</li>
                                 <li>Verpflichtung zur Einhaltung der Hausordnung & Gruppenregeln.</li>
                             </ul>
