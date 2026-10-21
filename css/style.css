@@ -652,11 +652,14 @@ ol {
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
     transform: translateX(-100%);
-    transition: transform var(--transition-normal);
+    visibility: hidden;
+    transition: transform var(--transition-normal), visibility 0s linear 300ms;
   }
 
   .nav__list.active {
+    visibility: visible;
     transform: translateX(0);
+    transition-delay: 0s;
   }
 
   .nav__toggle {
@@ -687,6 +690,10 @@ ol {
 
   .footer__grid {
     grid-template-columns: 1fr;
+  }
+
+  #enrollment-form .card-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -1095,7 +1102,8 @@ ol {
   z-index: 100;
 }
 
-.nav__dropdown:hover .nav__submenu {
+.nav__dropdown:hover .nav__submenu,
+.nav__dropdown:focus-within .nav__submenu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -1127,7 +1135,7 @@ ol {
     display: none;
   }
 
-  .nav__dropdown:hover .nav__submenu {
+  .nav__submenu {
     display: block;
   }
 }

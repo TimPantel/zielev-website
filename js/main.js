@@ -5,7 +5,24 @@
 // Mobile Navigation Toggle
 function toggleMenu() {
     const menu = document.getElementById('nav-menu');
-    menu.classList.toggle('active');
+    const toggle = document.querySelector('.nav__toggle');
+    const isOpen = menu.classList.toggle('active');
+
+    if (toggle) {
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    }
+}
+
+function closeMenu() {
+    const menu = document.getElementById('nav-menu');
+    const toggle = document.querySelector('.nav__toggle');
+
+    if (menu) menu.classList.remove('active');
+    if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Menü öffnen');
+    }
 }
 
 // Close menu when clicking outside
@@ -14,7 +31,17 @@ document.addEventListener('click', function (event) {
     const toggle = document.querySelector('.nav__toggle');
 
     if (menu && toggle && !menu.contains(event.target) && !toggle.contains(event.target)) {
-        menu.classList.remove('active');
+        closeMenu();
+    }
+});
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        const menu = document.getElementById('nav-menu');
+        if (menu && menu.classList.contains('active')) {
+            closeMenu();
+            document.querySelector('.nav__toggle')?.focus();
+        }
     }
 });
 
@@ -313,13 +340,27 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
+    faqItems.forEach((item, index) => {
         const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        if (!question || !answer) return;
+
+        if (!answer.id) answer.id = `faq-answer-${index + 1}`;
+        question.setAttribute('aria-controls', answer.id);
+        const initiallyExpanded = item.classList.contains('active');
+        question.setAttribute('aria-expanded', String(initiallyExpanded));
+        answer.setAttribute('aria-hidden', String(!initiallyExpanded));
+        answer.inert = !initiallyExpanded;
+
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
 
             // Toggle current item
             item.classList.toggle('active');
+            const isExpanded = !isActive;
+            question.setAttribute('aria-expanded', String(isExpanded));
+            answer.setAttribute('aria-hidden', String(!isExpanded));
+            answer.inert = !isExpanded;
         });
     });
 });
