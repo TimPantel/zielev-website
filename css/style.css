@@ -692,7 +692,7 @@ ol {
     grid-template-columns: 1fr;
   }
 
-  #enrollment-form .card-grid {
+  .card-grid {
     grid-template-columns: 1fr !important;
   }
 }
