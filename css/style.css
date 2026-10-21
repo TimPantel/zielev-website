@@ -1138,6 +1138,10 @@ ol {
   .nav__submenu {
     display: block;
   }
+
+  .nav__list:not(.active) .nav__submenu {
+    visibility: hidden;
+  }
 }
 
 /* ============================================================
