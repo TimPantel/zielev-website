@@ -91,6 +91,13 @@
 
                 <!-- Form Content -->
                 <form id="enrollment-form" novalidate>
+                    <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;">
+                        <label for="enrollment-website">Dieses Feld bitte leer lassen</label>
+                        <input type="text" name="website" id="enrollment-website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <input type="hidden" name="_started_at" id="enrollment-started-at">
+                    <input type="hidden" name="_submission_id" id="enrollment-submission-id">
+
                     <!-- Step 1: Stammdaten Kind & Eltern -->
                     <div class="form-step form-step--active" id="step-1">
                         <h3 class="form-step-title">👤 Kind & Erziehungsberechtigte</h3>
@@ -433,9 +440,9 @@
 
                 <!-- Success Screen -->
                 <div id="form-success" class="submission-success" style="display: none;">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
-                    <h2>Vielen Dank!</h2>
-                    <p>Die Anmeldung wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung per E-Mail an
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">ℹ️</div>
+                    <h2>Übermittlung gestartet</h2>
+                    <p>Die Anfrage wurde abgesendet. Die Website kann die technische Annahme durch das Formularsystem nicht bestätigen. Bitte prüfen Sie, ob eine Bestätigung per E-Mail an
                         <span id="display-email"></span>.
                     </p>
                     <a href="index.html" class="btn btn--accent mt-3">Zurück zur Startseite</a>
@@ -485,7 +492,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js?v=20261021-3"></script>
+    <script src="js/main.js?v=20261021-4"></script>
 </body>
 
 </html>

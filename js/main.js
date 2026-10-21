@@ -82,13 +82,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('enrollment-form');
     if (!form) return;
 
+    const startedAtField = document.getElementById('enrollment-started-at');
+    const submissionIdField = document.getElementById('enrollment-submission-id');
+    const markFormStarted = () => {
+        if (startedAtField && !startedAtField.value) startedAtField.value = String(Date.now());
+    };
+    form.addEventListener('focusin', markFormStarted, { once: true });
+    form.addEventListener('input', markFormStarted, { once: true });
+    form.addEventListener('change', markFormStarted, { once: true });
+    if (submissionIdField) {
+        submissionIdField.value = window.crypto?.randomUUID
+            ? window.crypto.randomUUID()
+            : `${Date.now()}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
+    }
+
     const steps = document.querySelectorAll('.form-step');
     const progressSteps = document.querySelectorAll('.progress-step');
     const btnNext = document.getElementById('btn-next');
     const btnPrev = document.getElementById('btn-prev');
     const btnSubmit = document.getElementById('btn-submit');
     const successScreen = document.getElementById('form-success');
-    const displayEmail = document.getElementById('display-email');
     const ibanInput = document.getElementById('iban-input');
     const ibanHelper = document.getElementById('iban-helper');
 
@@ -237,6 +250,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // Stop submission
         }
 
+        const hasSelectedModule = ['check-homework', 'check-lunch', 'check-afternoon']
+            .some(id => document.getElementById(id)?.checked);
+        const hasSelectedLunchDay = ['lunch_day_mo', 'lunch_day_di', 'lunch_day_mi', 'lunch_day_do', 'lunch_day_fr']
+            .some(name => form.querySelector(`[name="${name}"]`)?.checked);
+        if (!hasSelectedModule || (document.getElementById('check-lunch')?.checked && !hasSelectedLunchDay)) {
+            currentStep = 3;
+            updateForm();
+            alert(!hasSelectedModule
+                ? 'Bitte wählen Sie mindestens ein Betreuungsangebot aus.'
+                : 'Bitte wählen Sie mindestens einen Wochentag für das Mittagessen aus.');
+            return;
+        }
+
         // Final UI feedback
         btnSubmit.disabled = true;
         btnSubmit.textContent = '⏳ Wird übermittelt...';
@@ -246,10 +272,11 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.forEach((value, key) => { data[key] = value; });
 
         // ⚠️ WICHTIG: Die URL Ihrer Google Web App API
-        const API_URL = 'https://script.google.com/macros/s/AKfycbwEUpDI3tKNW4woqAOCxWQKJE0FSW9gsoDzuN9giiKJtUpUJQb5iRYX7603xm7UzjZa/exec'; // Beispiel
+        const API_URL = 'https://script.google.com/macros/s/AKfycbwEUpDI3tKNW4woqAOCxWQKJE0FSW9gsoDzuN9giiKJtUpUJQb5iRYX7603xm7UzjZa/exec';
 
         try {
-            // Wir nutzen 'no-cors' für die Google Apps Script Schnittstelle
+            // Die Apps-Script-Antwort ist cross-origin nicht lesbar. Der Request
+            // wird daher nur als abgesendet, nicht als serverseitig bestätigt behandelt.
             await fetch(API_URL, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -257,20 +284,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: new URLSearchParams(data).toString()
             });
 
-            // Da mode: 'no-cors' verwendet wird, können wir die Antwort des Servers nicht lesen.
-            // fetch() wirft bei no-cors KEINEN Fehler für HTTP 4xx oder 5xx Statuscodes,
-            // sondern nur bei echten Netzwerkfehlern (z.B. kein Internet).
-            // Daher gehen wir bei erfolgreichem fetch() davon aus, dass die Anfrage gesendet wurde.
-
-            // Success UI
+            // Keine Erfolgszusage: no-cors verrät nicht, ob das Apps Script
+            // gespeichert und die Bestätigungs-E-Mail versendet hat.
             form.style.display = 'none';
             const progressContainer = document.querySelector('.progress-bar-container');
             if (progressContainer) progressContainer.style.display = 'none';
 
             const formHeaderP = document.querySelector('.form-header p');
-            if (formHeaderP) formHeaderP.textContent = 'Anmeldung abgeschlossen';
+            if (formHeaderP) formHeaderP.textContent = 'Übermittlung gestartet';
 
-            displayEmail.textContent = data.email || 'Ihre E-Mail-Adresse';
+            const statusText = successScreen.querySelector('p');
+            if (statusText) {
+                statusText.textContent = `Die Anfrage wurde abgesendet. Die Website kann die technische Annahme durch das Formularsystem nicht bestätigen. Bitte prüfen Sie, ob eine Bestätigung an ${data.email || 'Ihre E-Mail-Adresse'} eingeht. Falls nicht, kontaktieren Sie uns unter info.zielev@gmail.com.`;
+            }
             successScreen.style.display = 'block';
 
         } catch (error) {
